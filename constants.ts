@@ -1,4 +1,4 @@
-import { CheckCircle, Heart, MapPin, Phone, Shield, Users } from 'lucide-react';
+import { Heart, Shield, Users } from 'lucide-react';
 
 export const WHATSAPP_NUMBER = "5562996019164";
 export const WHATSAPP_MESSAGE = "Olá, gostaria de receber orientação personalizada sobre as opções de apoio.";
