@@ -1,7 +1,6 @@
 import React from 'react';
 import { FEATURES, INTRO_CONTENT, WHATSAPP_NUMBER, WHATSAPP_MESSAGE } from '../constants';
 import { ArrowRight } from 'lucide-react';
-import { Button } from './ui/Button';
 
 export const Features: React.FC = () => {
   const handleWhatsApp = () => {

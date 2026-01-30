@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { QUIZ_QUESTIONS, WHATSAPP_NUMBER, WHATSAPP_MESSAGE } from '../constants';
-import { ArrowRight, Loader2, CheckCircle2, MessageCircle, Globe } from 'lucide-react';
+import { Loader2, CheckCircle2, MessageCircle, Globe } from 'lucide-react';
 import { Button } from './ui/Button';
 
 interface QuizProps {

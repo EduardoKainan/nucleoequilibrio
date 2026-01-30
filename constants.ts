@@ -1,4 +1,4 @@
-import { Brain, Heart, Shield, Users, Activity, Ban, Baby, FileCheck, Ambulance } from 'lucide-react';
+import { Brain, Heart, Activity, Ban, Baby, FileCheck, Ambulance } from 'lucide-react';
 
 export const WHATSAPP_NUMBER = "5562996019164";
 export const PHONE_NUMBER = "5562996019164"; // Ajuste se houver um número fixo diferente
