@@ -25,7 +25,7 @@ export const Locations: React.FC = () => {
             <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col">
               <div className="h-48 w-full bg-slate-200 relative">
                  <img 
-                   src={`https://picsum.photos/seed/${loc.region}/800/400`} 
+                   src={loc.image} 
                    alt={`Unidade em ${loc.region}`}
                    className="w-full h-full object-cover"
                  />

@@ -21,4 +21,5 @@ export interface LocationItem {
   region: string;
   description: string;
   city: string;
+  image: string;
 }

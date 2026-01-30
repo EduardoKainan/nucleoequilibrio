@@ -1,33 +1,70 @@
 import React from 'react';
-import { FEATURES } from '../constants';
+import { FEATURES, INTRO_CONTENT, WHATSAPP_NUMBER, WHATSAPP_MESSAGE } from '../constants';
+import { ArrowRight } from 'lucide-react';
+import { Button } from './ui/Button';
 
 export const Features: React.FC = () => {
+  const handleWhatsApp = () => {
+     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`, '_blank');
+  };
+
   return (
-    <div id="sobre" className="py-16 bg-white overflow-hidden lg:py-24">
-      <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
-        <div className="relative">
-          <h2 className="text-center text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Atendimento Humano e Especializado
-          </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-slate-500">
-            Nossa equipe multidisciplinar trabalha com ética, respeito e técnicas modernas para proporcionar um ambiente seguro de reequilíbrio.
-          </p>
+    <div id="tratamentos" className="py-16 bg-white overflow-hidden lg:py-24">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Seção Introdutória - Cuidar de Quem Você Ama */}
+        <div className="relative mb-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+             <div>
+                <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl mb-6">
+                  {INTRO_CONTENT.title}
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  {INTRO_CONTENT.text}
+                </p>
+                <div className="flex items-center gap-2 text-teal-700 font-semibold cursor-pointer hover:text-teal-800 transition-colors" onClick={handleWhatsApp}>
+                  <span>Saiba como podemos ajudar</span>
+                  <ArrowRight size={20} />
+                </div>
+             </div>
+             <div className="relative h-64 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?q=80&w=2000&auto=format&fit=crop" 
+                  alt="Apoio familiar e acolhimento" 
+                  className="w-full h-full object-cover"
+                />
+             </div>
+          </div>
         </div>
 
-        <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-3 lg:gap-8">
-          {FEATURES.map((feature, index) => (
-            <div key={index} className="mt-10 lg:mt-0 p-8 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white mx-auto lg:mx-0">
-                <feature.icon className="h-6 w-6" aria-hidden="true" />
+        <div className="relative">
+          <div className="text-center mb-12">
+             <h2 className="text-3xl font-extrabold text-slate-900">Tratamentos e Internações</h2>
+             <p className="mt-4 text-xl text-slate-500">Protocolos eficazes e acompanhamento contínuo.</p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {FEATURES.map((feature, index) => (
+              <div key={index} className="flex flex-col p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-teal-200 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-teal-100 text-teal-700">
+                    <feature.icon className="h-6 w-6" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">{feature.title}</h3>
+                </div>
+                <div className="flex-1">
+                  <p className="text-slate-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+                <div className="mt-6 pt-6 border-t border-slate-200">
+                   <button onClick={handleWhatsApp} className="text-teal-600 font-medium text-sm flex items-center gap-1 hover:text-teal-800 transition-colors">
+                     Saiba mais <ArrowRight size={14} />
+                   </button>
+                </div>
               </div>
-              <div className="mt-5">
-                <h3 className="text-lg leading-6 font-medium text-slate-900 text-center lg:text-left">{feature.title}</h3>
-                <p className="mt-2 text-base text-slate-500 text-center lg:text-left">
-                  {feature.description}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
