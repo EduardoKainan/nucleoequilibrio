@@ -23,6 +23,16 @@ export const INTRO_CONTENT = {
   text: "Sabemos que lidar com dependência química, alcoolismo ou transtornos emocionais é uma das decisões mais difíceis para uma família. Por isso, oferecemos acolhimento, orientação e tratamento individualizado, respeitando cada história e cada momento. Nossa equipe é formada por profissionais experientes e qualificados, preparados para conduzir o tratamento com ética, sigilo e responsabilidade."
 };
 
+export const PRESELL_IMAGES = [
+  "https://i.postimg.cc/RqD224Hq/Whats-App-Image-2026-02-02-at-11-31-43.jpg",
+  "https://i.postimg.cc/4HmqnFr1/Whats-App-Image-2026-02-02-at-11-31-44-(2).jpg",
+  "https://i.postimg.cc/6T3DHyyG/Whats-App-Image-2026-02-02-at-11-33-09.jpg",
+  "https://i.postimg.cc/Jtn9TGGH/Whats-App-Image-2026-02-02-at-11-33-10.jpg",
+  "https://i.postimg.cc/jC5G8LLw/Whats-App-Image-2026-02-02-at-11-33-10-(1).jpg",
+  "https://i.postimg.cc/XXJT2ppZ/Whats-App-Image-2026-02-02-at-11-34-03.jpg",
+  "https://i.postimg.cc/grJfMnnh/Whats-App-Image-2026-02-02-at-11-34-04.jpg"
+];
+
 export const STATS = [
   { label: "Pacientes acolhidos", value: "+500" },
   { label: "Anos de experiência", value: "+10" },
@@ -68,30 +78,10 @@ export const FEATURES = [
   }
 ];
 
-// Perguntas de Consciência (Funil Mantido)
+// Perguntas de Consciência (Funil Simplificado)
 export const QUIZ_QUESTIONS = [
   {
     id: 1,
-    question: "Qual dessas situações mais se aproxima do que você está vivendo hoje?",
-    options: [
-      "Preciso de orientação para uma situação difícil",
-      "Um familiar precisa de apoio especializado",
-      "Estou buscando informações antes de tomar uma decisão",
-      "Quero entender melhor quais opções existem"
-    ]
-  },
-  {
-    id: 2,
-    question: "Com que urgência você sente que precisa de orientação agora?",
-    options: [
-      "É algo urgente, preciso falar com alguém hoje",
-      "Preciso de ajuda nos próximos dias",
-      "Ainda estou avaliando a situação",
-      "Só quero entender melhor por enquanto"
-    ]
-  },
-  {
-    id: 3,
     question: "Você busca orientação para quem?",
     options: [
       "Para mim",

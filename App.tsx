@@ -7,6 +7,8 @@ import { Locations } from './components/Locations';
 import { Insurance } from './components/Insurance';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { ImageCarousel } from './components/ImageCarousel';
+import { StructureGallery } from './components/StructureGallery';
 
 const App: React.FC = () => {
   // Estado para controlar se o quiz (presell) foi concluído
@@ -33,21 +35,53 @@ const App: React.FC = () => {
            </div>
         </header>
 
-        <main className="flex-grow flex flex-col items-center justify-center p-4 bg-gradient-to-b from-white to-slate-100">
-          <div className="max-w-2xl w-full text-center mb-8 fade-in">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-              Entenda o seu momento atual
-            </h1>
-            <p className="text-lg text-slate-600">
-              Responda a 3 perguntas rápidas para recebermos você com a orientação mais adequada.
-            </p>
+        <main className="flex-grow flex flex-col justify-center py-8 px-4 bg-gradient-to-b from-white to-slate-100">
+          <div className="max-w-6xl mx-auto w-full">
+            
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
+              
+              {/* Coluna da Esquerda: Contexto Visual + Headline */}
+              {/* Removido 'order-2 lg:order-1' para manter ordem natural (primeiro no mobile/desktop) */}
+              <div className="fade-in flex flex-col gap-6">
+                <div>
+                  <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-2">
+                    Estamos Presentes em Goiás e no Distrito Federal
+                  </h1>
+                  <p className="text-lg text-slate-600">
+                    Unidades preparadas para oferecer atendimento seguro e humanizado.
+                  </p>
+                </div>
+                
+                <ImageCarousel />
+
+                <div className="hidden lg:block text-slate-500 text-sm mt-2">
+                  <p>Ambientes arborizados, refeitórios completos e espaços de convivência para recuperação plena.</p>
+                </div>
+              </div>
+
+              {/* Coluna da Direita: Quiz (Ação) */}
+              {/* Removido 'order-1 lg:order-2' */}
+              <div className="flex flex-col items-center lg:items-end fade-in">
+                 <div className="w-full max-w-lg">
+                    <div className="text-center lg:text-left mb-6">
+                      <h2 className="text-xl font-bold text-slate-800">
+                        Entenda o seu momento atual
+                      </h2>
+                      <p className="text-slate-500 text-sm">
+                        Responda a uma pergunta rápida para direcionarmos o melhor atendimento.
+                      </p>
+                    </div>
+                    
+                    <Quiz onComplete={handleQuizCompletion} className="shadow-2xl border border-teal-100/50" />
+                    
+                    <p className="mt-6 text-xs text-slate-400 text-center max-w-md mx-auto">
+                      Este é um espaço seguro de autoavaliação. Ao continuar, você terá acesso às nossas soluções especializadas.
+                    </p>
+                 </div>
+              </div>
+
+            </div>
           </div>
-          
-          <Quiz onComplete={handleQuizCompletion} className="shadow-2xl border border-slate-200" />
-          
-          <p className="mt-8 text-sm text-slate-400 text-center max-w-md">
-            Este é um espaço seguro de autoavaliação. Ao continuar, você terá acesso às nossas soluções especializadas.
-          </p>
         </main>
       </div>
     );
@@ -80,6 +114,7 @@ const App: React.FC = () => {
         <Hero />
         <Stats />
         <Features />
+        <StructureGallery />
         <Insurance />
         <Locations />
       </main>
