@@ -51,13 +51,15 @@ const App: React.FC = () => {
                   </p>
                 </div>
                 
-                {/* Vídeo do YouTube (Shorts) Incorporado - Autoplay/Loop/Muted */}
+                {/* Vídeo do YouTube (Shorts) Incorporado */}
                 <div className="relative w-full h-[450px] md:h-[550px] rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-200">
                   <iframe 
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/DsPGmaT6GRs?autoplay=1&mute=1&loop=1&playlist=DsPGmaT6GRs&controls=0&showinfo=0&rel=0&modestbranding=1"
-                    title="Apresentação da Unidade"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    src="https://www.youtube.com/embed/DsPGmaT6GRs?si=J2qZBpY7yDaEr4rA" 
+                    title="Apresentação da Unidade" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
                     allowFullScreen
                     style={{ objectFit: 'cover' }}
                   ></iframe>
