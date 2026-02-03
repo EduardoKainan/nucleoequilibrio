@@ -4,9 +4,7 @@ import { MapPin } from 'lucide-react';
 import { Button } from './ui/Button';
 
 export const Locations: React.FC = () => {
-    const handleContact = () => {
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`, '_blank');
-    };
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
   return (
     <div id="unidades" className="bg-slate-50 py-16 sm:py-24">
@@ -41,7 +39,12 @@ export const Locations: React.FC = () => {
                     {loc.description}
                   </p>
                 </div>
-                <Button variant="outline" className="w-full" onClick={handleContact}>
+                <Button 
+                    href={whatsappUrl} 
+                    target="_blank"
+                    variant="outline" 
+                    className="w-full"
+                >
                   Solicitar informações desta unidade
                 </Button>
               </div>

@@ -14,6 +14,8 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
   const [showResult, setShowResult] = useState(false);
   const [answers, setAnswers] = useState<Record<number, string>>({});
 
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
   const handleOptionClick = (option: string) => {
     setAnswers(prev => ({ ...prev, [currentStep]: option }));
     
@@ -35,12 +37,6 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
       setIsAnalyzing(false);
       setShowResult(true);
     }, 2000);
-  };
-
-  const handleWhatsAppClick = () => {
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`, '_blank');
-    // Opcional: Liberar o site no fundo caso o usuário volte
-    if (onComplete) onComplete(); 
   };
 
   const handleSiteClick = () => {
@@ -89,12 +85,20 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
             </div>
 
             <div className="flex flex-col gap-4 max-w-sm mx-auto pt-4">
-              <Button onClick={handleWhatsAppClick} className="w-full gap-2 py-4 text-lg shadow-lg animate-pulse">
+              <Button 
+                href={whatsappUrl} 
+                target="_blank"
+                className="w-full gap-2 py-4 text-lg shadow-lg animate-pulse"
+              >
                 <MessageCircle size={24} />
                 Falar com Terapeuta Online
               </Button>
               
-              <Button variant="outline" onClick={handleSiteClick} className="w-full gap-2 border-slate-300 text-slate-600 hover:text-teal-700 hover:border-teal-500">
+              <Button 
+                variant="outline" 
+                onClick={handleSiteClick} 
+                className="w-full gap-2 border-slate-300 text-slate-600 hover:text-teal-700 hover:border-teal-500"
+              >
                 <Globe size={20} />
                 Ver Site e Estrutura
               </Button>

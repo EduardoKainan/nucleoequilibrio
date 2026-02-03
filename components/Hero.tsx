@@ -4,13 +4,8 @@ import { Button } from './ui/Button';
 import { MessageCircle, CheckCircle, Phone } from 'lucide-react';
 
 export const Hero: React.FC = () => {
-  const handleWhatsApp = () => {
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`, '_blank');
-  };
-
-  const handleCall = () => {
-    window.open(`tel:${PHONE_NUMBER}`);
-  };
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  const phoneUrl = `tel:${PHONE_NUMBER}`;
 
   return (
     <div id="hero" className="relative bg-slate-900 overflow-hidden">
@@ -30,11 +25,19 @@ export const Hero: React.FC = () => {
                 {HERO_CONTENT.subheadline}
               </p>
               <div className="mt-8 sm:mt-10 sm:flex sm:justify-center lg:justify-start gap-4">
-                <Button onClick={handleWhatsApp} className="w-full sm:w-auto gap-2 text-lg px-8 py-4 shadow-lg">
+                <Button 
+                  href={whatsappUrl} 
+                  target="_blank"
+                  className="w-full sm:w-auto gap-2 text-lg px-8 py-4 shadow-lg"
+                >
                   <MessageCircle size={24} />
                   {HERO_CONTENT.cta}
                 </Button>
-                <Button onClick={handleCall} variant="outline" className="w-full sm:w-auto gap-2 text-lg px-8 py-4 bg-white/10 text-white border-white/30 hover:bg-white/20 mt-3 sm:mt-0 backdrop-blur-md">
+                <Button 
+                  href={phoneUrl}
+                  variant="outline" 
+                  className="w-full sm:w-auto gap-2 text-lg px-8 py-4 bg-white/10 text-white border-white/30 hover:bg-white/20 mt-3 sm:mt-0 backdrop-blur-md"
+                >
                   <Phone size={24} />
                   {HERO_CONTENT.ctaPhone}
                 </Button>

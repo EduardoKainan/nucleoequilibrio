@@ -3,9 +3,7 @@ import { FEATURES, INTRO_CONTENT, WHATSAPP_NUMBER, WHATSAPP_MESSAGE } from '../c
 import { ArrowRight } from 'lucide-react';
 
 export const Features: React.FC = () => {
-  const handleWhatsApp = () => {
-     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`, '_blank');
-  };
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
   return (
     <div id="tratamentos" className="py-16 bg-white overflow-hidden lg:py-24">
@@ -21,10 +19,15 @@ export const Features: React.FC = () => {
                 <p className="text-lg text-slate-600 leading-relaxed mb-8">
                   {INTRO_CONTENT.text}
                 </p>
-                <div className="flex items-center gap-2 text-teal-700 font-semibold cursor-pointer hover:text-teal-800 transition-colors" onClick={handleWhatsApp}>
+                <a 
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-teal-700 font-semibold cursor-pointer hover:text-teal-800 transition-colors inline-flex"
+                >
                   <span>Saiba como podemos ajudar</span>
                   <ArrowRight size={20} />
-                </div>
+                </a>
              </div>
              <div className="relative h-64 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
                 <img 
@@ -57,9 +60,14 @@ export const Features: React.FC = () => {
                   </p>
                 </div>
                 <div className="mt-6 pt-6 border-t border-slate-200">
-                   <button onClick={handleWhatsApp} className="text-teal-600 font-medium text-sm flex items-center gap-1 hover:text-teal-800 transition-colors">
+                   <a 
+                     href={whatsappUrl}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="text-teal-600 font-medium text-sm flex items-center gap-1 hover:text-teal-800 transition-colors inline-flex"
+                   >
                      Saiba mais <ArrowRight size={14} />
-                   </button>
+                   </a>
                 </div>
               </div>
             ))}

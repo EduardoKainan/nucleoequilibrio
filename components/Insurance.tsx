@@ -4,10 +4,8 @@ import { FileCheck } from 'lucide-react';
 import { WHATSAPP_NUMBER } from '../constants';
 
 export const Insurance: React.FC = () => {
-    const handleCheck = () => {
-        const message = "Olá, gostaria de verificar a cobertura do meu plano de saúde.";
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
-    };
+    const message = "Olá, gostaria de verificar a cobertura do meu plano de saúde.";
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
   return (
     <div id="convenios" className="bg-teal-900 text-white py-16">
@@ -23,7 +21,8 @@ export const Insurance: React.FC = () => {
           </div>
           <div className="lg:w-1/3 flex justify-center lg:justify-end">
             <Button 
-                onClick={handleCheck}
+                href={whatsappUrl}
+                target="_blank"
                 className="w-full sm:w-auto bg-white text-teal-900 hover:bg-teal-50 border-transparent text-lg py-4 px-8 font-bold gap-2"
             >
                 <FileCheck className="w-6 h-6" />

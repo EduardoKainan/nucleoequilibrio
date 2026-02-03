@@ -24,13 +24,11 @@ export const INTRO_CONTENT = {
 };
 
 export const PRESELL_IMAGES = [
-  "https://i.postimg.cc/RqD224Hq/Whats-App-Image-2026-02-02-at-11-31-43.jpg",
-  "https://i.postimg.cc/4HmqnFr1/Whats-App-Image-2026-02-02-at-11-31-44-(2).jpg",
-  "https://i.postimg.cc/6T3DHyyG/Whats-App-Image-2026-02-02-at-11-33-09.jpg",
-  "https://i.postimg.cc/Jtn9TGGH/Whats-App-Image-2026-02-02-at-11-33-10.jpg",
-  "https://i.postimg.cc/jC5G8LLw/Whats-App-Image-2026-02-02-at-11-33-10-(1).jpg",
-  "https://i.postimg.cc/XXJT2ppZ/Whats-App-Image-2026-02-02-at-11-34-03.jpg",
-  "https://i.postimg.cc/grJfMnnh/Whats-App-Image-2026-02-02-at-11-34-04.jpg"
+  "https://i.postimg.cc/28kmb5jd/Whats_App_Image_2026_02_02_at_11_31_43.jpg",
+  "https://i.postimg.cc/vTzsqJhC/Whats_App_Image_2026_02_02_at_11_31_44_(2).jpg",
+  "https://i.postimg.cc/VsBmktw4/Whats_App_Image_2026_02_02_at_11_33_09.jpg",
+  "https://i.postimg.cc/dQmwVCF6/Whats_App_Image_2026_02_02_at_11_33_10.jpg",
+  "https://i.postimg.cc/y6Xs8RKL/Whats_App_Image_2026_02_02_at_11_34_04.jpg"
 ];
 
 export const STATS = [

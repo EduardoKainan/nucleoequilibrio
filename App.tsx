@@ -41,7 +41,6 @@ const App: React.FC = () => {
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               
               {/* Coluna da Esquerda: Contexto Visual + Headline */}
-              {/* Removido 'order-2 lg:order-1' para manter ordem natural (primeiro no mobile/desktop) */}
               <div className="fade-in flex flex-col gap-6">
                 <div>
                   <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-2">
@@ -52,7 +51,17 @@ const App: React.FC = () => {
                   </p>
                 </div>
                 
-                <ImageCarousel />
+                {/* Vídeo do YouTube (Shorts) Incorporado - Autoplay/Loop/Muted */}
+                <div className="relative w-full h-[450px] md:h-[550px] rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-200">
+                  <iframe 
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/DsPGmaT6GRs?autoplay=1&mute=1&loop=1&playlist=DsPGmaT6GRs&controls=0&showinfo=0&rel=0&modestbranding=1"
+                    title="Apresentação da Unidade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    style={{ objectFit: 'cover' }}
+                  ></iframe>
+                </div>
 
                 <div className="hidden lg:block text-slate-500 text-sm mt-2">
                   <p>Ambientes arborizados, refeitórios completos e espaços de convivência para recuperação plena.</p>
@@ -60,7 +69,6 @@ const App: React.FC = () => {
               </div>
 
               {/* Coluna da Direita: Quiz (Ação) */}
-              {/* Removido 'order-1 lg:order-2' */}
               <div className="flex flex-col items-center lg:items-end fade-in">
                  <div className="w-full max-w-lg">
                     <div className="text-center lg:text-left mb-6">
@@ -100,12 +108,14 @@ const App: React.FC = () => {
             <a href="#tratamentos" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Tratamentos</a>
             <a href="#convenios" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Convênios</a>
             <a href="#unidades" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Unidades</a>
-            <button 
-              onClick={() => window.open(`https://wa.me/5562996019164`, '_blank')}
-              className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors font-medium text-sm shadow-lg"
+            <a 
+              href={`https://wa.me/5562996019164`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors font-medium text-sm shadow-lg inline-block"
             >
               Falar com Especialista
-            </button>
+            </a>
           </nav>
         </div>
       </header>
