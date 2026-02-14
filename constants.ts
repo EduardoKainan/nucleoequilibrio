@@ -32,33 +32,70 @@ export const INSURANCE_LOGOS = [
   "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2023/08/bradesco-saude.png"
 ];
 
-// Imagens atualizadas com o banco de imagens completo das unidades
-export const PRESELL_IMAGES = [
-  // Unidade 1
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-20.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-14.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-10.jpeg',
-  // Unidade 2
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-20.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-8.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-7.jpeg',
-  // Unidade 3
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-22.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-11.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-3.jpeg',
-  // Unidade 4
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-17.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-14.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-12.jpeg',
-  // Unidade 5
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-3.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-1.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-9.jpeg',
-  // Unidade 6
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-15.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-6.jpeg',
-  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-9.jpeg'
+// Estrutura organizada por Região e Unidade para a Presell
+export const REGIONAL_UNITS = [
+  {
+    region: "Goiás",
+    units: [
+      {
+        name: "Unidade I - Recuperação Integral",
+        images: [
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-20.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-14.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-10.jpeg',
+        ]
+      },
+      {
+        name: "Unidade II - Reabilitação Humanizada",
+        images: [
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-20.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-8.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-7.jpeg',
+        ]
+      },
+      {
+        name: "Unidade III - Clínica Campestre",
+        images: [
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-22.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-11.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-3.jpeg',
+        ]
+      }
+    ]
+  },
+  {
+    region: "Distrito Federal (Brasília e Entorno)",
+    units: [
+      {
+        name: "Unidade IV - Centro de Apoio",
+        images: [
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-17.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-14.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-12.jpeg',
+        ]
+      },
+      {
+        name: "Unidade V - Espaço Vida",
+        images: [
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-3.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-1.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-9.jpeg',
+        ]
+      },
+      {
+        name: "Unidade VI - Nova Jornada",
+        images: [
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-15.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-6.jpeg',
+          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-9.jpeg'
+        ]
+      }
+    ]
+  }
 ];
+
+// Mantendo PRESELL_IMAGES apenas como fallback ou para uso geral flatten se necessário (opcional)
+export const PRESELL_IMAGES = REGIONAL_UNITS.flatMap(r => r.units.flatMap(u => u.images));
 
 // URLs dos prints de depoimentos
 export const TESTIMONIALS = [

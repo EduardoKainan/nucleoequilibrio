@@ -7,10 +7,10 @@ import { Locations } from './components/Locations';
 import { Insurance } from './components/Insurance';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
-import { ImageCarousel } from './components/ImageCarousel';
 import { StructureGallery } from './components/StructureGallery';
 import { InsuranceLogos } from './components/InsuranceLogos';
 import { Testimonials } from './components/Testimonials';
+import { PresellLocations } from './components/PresellLocations';
 
 const App: React.FC = () => {
   // Estado para controlar se o quiz (presell) foi concluído
@@ -97,27 +97,9 @@ const App: React.FC = () => {
                <Testimonials />
             </div>
 
-            {/* Seção Separada para Imagens das Unidades */}
-            <div className="fade-in pt-10 lg:pt-12 mb-8">
-                <div className="text-center mb-6 lg:mb-8">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-sm font-semibold mb-3">
-                        <span className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
-                        </span>
-                        Estrutura Completa
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
-                        Conheça onde a recuperação acontece
-                    </h2>
-                    <p className="text-slate-600 max-w-2xl mx-auto">
-                        Nossas unidades foram projetadas para oferecer paz, segurança e conforto. Ambientes arborizados, áreas de lazer e espaços terapêuticos.
-                    </p>
-                </div>
-                
-                <div className="w-full bg-white p-2 md:p-4 rounded-3xl shadow-lg border border-slate-100">
-                    <ImageCarousel className="h-[300px] md:h-[500px] rounded-2xl w-full" />
-                </div>
+            {/* Seção Separada para Imagens das Unidades - AGORA USANDO PresellLocations */}
+            <div className="fade-in pt-10 lg:pt-12 mb-8 border-t border-slate-200">
+                <PresellLocations />
             </div>
             
             {/* Seção de Convênios na Presell */}
