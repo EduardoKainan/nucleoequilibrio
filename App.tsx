@@ -9,6 +9,8 @@ import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ImageCarousel } from './components/ImageCarousel';
 import { StructureGallery } from './components/StructureGallery';
+import { InsuranceLogos } from './components/InsuranceLogos';
+import { Testimonials } from './components/Testimonials';
 
 const App: React.FC = () => {
   // Estado para controlar se o quiz (presell) foi concluído
@@ -28,34 +30,36 @@ const App: React.FC = () => {
   if (!isQuizCompleted) {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-        {/* Header Simples Presell */}
-        <header className="w-full py-6 text-center bg-white border-b border-slate-100">
+        {/* Header Simples Presell - Padding reduzido no mobile */}
+        <header className="w-full py-4 lg:py-6 text-center bg-white border-b border-slate-100">
            <div className="font-bold text-2xl text-slate-800 tracking-tight">
               Núcleo<span className="text-teal-600">Equilíbrio</span>
            </div>
         </header>
 
-        <main className="flex-grow flex flex-col justify-center py-8 px-4 bg-gradient-to-b from-white to-slate-100">
+        <main className="flex-grow flex flex-col py-6 lg:py-8 px-4 bg-gradient-to-b from-white to-slate-100">
           <div className="max-w-6xl mx-auto w-full">
             
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Grid principal - gap reduzido no mobile */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start mb-12 lg:mb-16">
               
-              {/* Coluna da Esquerda: Contexto Visual + Headline */}
-              <div className="fade-in flex flex-col gap-6">
+              {/* Coluna da Esquerda (Desktop) / Baixo (Mobile): Contexto Visual + Headline */}
+              {/* No mobile: Order 2 (Aparece DEPOIS do Quiz) */}
+              <div className="fade-in flex flex-col gap-4 lg:gap-6 order-2 lg:order-1">
                 <div>
                   <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-2">
-                    Estamos Presentes em Goiás e no Distrito Federal
+                    Cada Dia Sem Tratamento É Um Risco.
                   </h1>
                   <p className="text-lg text-slate-600">
-                    Unidades preparadas para oferecer atendimento seguro e humanizado.
+                    Tome uma decisão hoje e ofereça apoio seguro, humano e imediato. Sua ação pode salvar uma vida.
                   </p>
                 </div>
                 
-                {/* Vídeo do YouTube (Shorts) Incorporado */}
-                <div className="relative w-full h-[450px] md:h-[550px] rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-200">
+                {/* Vídeo do YouTube Incorporado */}
+                <div className="relative w-full h-[250px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl bg-black border border-slate-200">
                   <iframe 
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/DsPGmaT6GRs?si=J2qZBpY7yDaEr4rA" 
+                    src="https://www.youtube.com/embed/0k3Whno19Z4?si=X8_JNJxKd0SZ06QO" 
                     title="Apresentação da Unidade" 
                     frameBorder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -64,33 +68,63 @@ const App: React.FC = () => {
                     style={{ objectFit: 'cover' }}
                   ></iframe>
                 </div>
-
-                <div className="hidden lg:block text-slate-500 text-sm mt-2">
-                  <p>Ambientes arborizados, refeitórios completos e espaços de convivência para recuperação plena.</p>
-                </div>
               </div>
 
-              {/* Coluna da Direita: Quiz (Ação) */}
-              <div className="flex flex-col items-center lg:items-end fade-in">
+              {/* Coluna da Direita (Desktop) / Cima (Mobile): Quiz (Ação) */}
+              {/* No mobile: Order 1 (Aparece PRIMEIRO) */}
+              <div className="flex flex-col items-center lg:items-end fade-in lg:sticky lg:top-8 order-1 lg:order-2">
                  <div className="w-full max-w-lg">
-                    <div className="text-center lg:text-left mb-6">
+                    <div className="text-center lg:text-left mb-4 lg:mb-6">
                       <h2 className="text-xl font-bold text-slate-800">
                         Entenda o seu momento atual
                       </h2>
                       <p className="text-slate-500 text-sm">
-                        Responda a uma pergunta rápida para direcionarmos o melhor atendimento.
+                        Selecione uma opção abaixo para iniciarmos o atendimento.
                       </p>
                     </div>
                     
                     <Quiz onComplete={handleQuizCompletion} className="shadow-2xl border border-teal-100/50" />
                     
-                    <p className="mt-6 text-xs text-slate-400 text-center max-w-md mx-auto">
-                      Este é um espaço seguro de autoavaliação. Ao continuar, você terá acesso às nossas soluções especializadas.
+                    <p className="mt-4 lg:mt-6 text-xs text-slate-400 text-center max-w-md mx-auto">
+                      Este é um espaço seguro. Ao continuar, você terá acesso às nossas soluções especializadas.
                     </p>
                  </div>
               </div>
-
             </div>
+
+            {/* Seção de Depoimentos na Presell (Antes das fotos) */}
+            <div className="fade-in border-t border-slate-200 pt-10 lg:pt-12">
+               <Testimonials />
+            </div>
+
+            {/* Seção Separada para Imagens das Unidades */}
+            <div className="fade-in pt-10 lg:pt-12 mb-8">
+                <div className="text-center mb-6 lg:mb-8">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-sm font-semibold mb-3">
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                        </span>
+                        Estrutura Completa
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
+                        Conheça onde a recuperação acontece
+                    </h2>
+                    <p className="text-slate-600 max-w-2xl mx-auto">
+                        Nossas unidades foram projetadas para oferecer paz, segurança e conforto. Ambientes arborizados, áreas de lazer e espaços terapêuticos.
+                    </p>
+                </div>
+                
+                <div className="w-full bg-white p-2 md:p-4 rounded-3xl shadow-lg border border-slate-100">
+                    <ImageCarousel className="h-[300px] md:h-[500px] rounded-2xl w-full" />
+                </div>
+            </div>
+            
+            {/* Seção de Convênios na Presell */}
+            <div className="fade-in pt-8 border-t border-slate-200">
+               <InsuranceLogos title="Atendemos os principais planos" />
+            </div>
+
           </div>
         </main>
       </div>
@@ -126,6 +160,8 @@ const App: React.FC = () => {
         <Hero />
         <Stats />
         <Features />
+        {/* Depoimentos inseridos antes da galeria de estrutura */}
+        <Testimonials />
         <StructureGallery />
         <Insurance />
         <Locations />

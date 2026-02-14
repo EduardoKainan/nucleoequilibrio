@@ -47,12 +47,12 @@ export const Hero: React.FC = () => {
         </div>
       </div>
       
-      {/* Imagem de Fundo - Pessoa reflexiva/triste */}
+      {/* Imagem de Fundo Atualizada */}
       <div className="absolute inset-0 z-0">
         <img
           className="h-full w-full object-cover opacity-40 lg:opacity-50"
-          src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?q=80&w=2072&auto=format&fit=crop"
-          alt="Pessoa em momento de reflexão precisando de apoio"
+          src="https://i.postimg.cc/htFkCBy8/Gemini-Generated-Image-f1mcmyf1mcmyf1mc.png"
+          alt="Apoio e recuperação"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/20 lg:to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>

@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { PRESELL_IMAGES } from '../constants';
 
-export const ImageCarousel: React.FC = () => {
+interface ImageCarouselProps {
+  className?: string;
+}
+
+export const ImageCarousel: React.FC<ImageCarouselProps> = ({ className = "" }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -13,7 +17,7 @@ export const ImageCarousel: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg bg-slate-200">
+    <div className={`relative w-full overflow-hidden shadow-lg bg-slate-200 ${className || 'h-64 md:h-80 rounded-2xl'}`}>
       {PRESELL_IMAGES.map((image, index) => (
         <div
           key={index}

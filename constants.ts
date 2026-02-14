@@ -1,12 +1,13 @@
 import { Brain, Heart, Activity, Ban, Baby, FileCheck, Ambulance } from 'lucide-react';
 
 export const WHATSAPP_NUMBER = "5562996019164";
-export const PHONE_NUMBER = "5562996019164"; // Ajuste se houver um número fixo diferente
+export const PHONE_NUMBER = "5562996019164";
 export const WHATSAPP_MESSAGE = "Olá, gostaria de falar com um especialista e receber orientação sobre tratamentos.";
 
 export const NAV_LINKS = [
   { label: 'Início', href: '#hero' },
   { label: 'Tratamentos', href: '#tratamentos' },
+  { label: 'Depoimentos', href: '#depoimentos' },
   { label: 'Convênios', href: '#convenios' },
   { label: 'Unidades', href: '#unidades' },
 ];
@@ -23,12 +24,48 @@ export const INTRO_CONTENT = {
   text: "Sabemos que lidar com dependência química, alcoolismo ou transtornos emocionais é uma das decisões mais difíceis para uma família. Por isso, oferecemos acolhimento, orientação e tratamento individualizado, respeitando cada história e cada momento. Nossa equipe é formada por profissionais experientes e qualificados, preparados para conduzir o tratamento com ética, sigilo e responsabilidade."
 };
 
+export const INSURANCE_LOGOS = [
+  "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2023/08/unimed.png",
+  "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2023/08/allianz.png",
+  "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2023/08/amil.png",
+  "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2023/08/porto-seguros.png",
+  "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2023/08/bradesco-saude.png"
+];
+
+// Imagens atualizadas com o banco de imagens completo das unidades
 export const PRESELL_IMAGES = [
-  "https://i.postimg.cc/28kmb5jd/Whats_App_Image_2026_02_02_at_11_31_43.jpg",
-  "https://i.postimg.cc/vTzsqJhC/Whats_App_Image_2026_02_02_at_11_31_44_(2).jpg",
-  "https://i.postimg.cc/VsBmktw4/Whats_App_Image_2026_02_02_at_11_33_09.jpg",
-  "https://i.postimg.cc/dQmwVCF6/Whats_App_Image_2026_02_02_at_11_33_10.jpg",
-  "https://i.postimg.cc/y6Xs8RKL/Whats_App_Image_2026_02_02_at_11_34_04.jpg"
+  // Unidade 1
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-20.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-14.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-10.jpeg',
+  // Unidade 2
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-20.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-8.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-7.jpeg',
+  // Unidade 3
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-22.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-11.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-3.jpeg',
+  // Unidade 4
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-17.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-14.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-12.jpeg',
+  // Unidade 5
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-3.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-1.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-9.jpeg',
+  // Unidade 6
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-15.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-6.jpeg',
+  'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-9.jpeg'
+];
+
+// URLs dos prints de depoimentos
+export const TESTIMONIALS = [
+  "https://i.postimg.cc/RVNBqd8t/Gemini_Generated_Image_e92z6fe92z6fe92z.jpg",
+  "https://i.postimg.cc/m2tshjqF/Gemini_Generated_Image_407nx6407nx6407n.jpg",
+  "https://i.postimg.cc/Kc9bZw9t/Gemini_Generated_Image_9j55p69j55p69j55.jpg",
+  "https://i.postimg.cc/GhHC9KNy/Gemini_Generated_Image_pzh7qapzh7qapzh7.jpg"
 ];
 
 export const STATS = [
@@ -90,17 +127,42 @@ export const QUIZ_QUESTIONS = [
   }
 ];
 
+// Lista de Unidades Separadas
 export const LOCATIONS = [
   {
     region: "Goiás",
-    description: "Estrutura ampla e conectada com a natureza, ideal para momentos de reflexão e reequilíbrio, próxima aos principais centros.",
-    city: "Próximo a Goiânia e Aparecida",
-    image: "https://www.goiania.go.gov.br/wp-content/uploads/2019/10/10.28GOIANIAGERAL_PJ-1-1024x569.jpeg"
+    city: "Unidade I - Recuperação Integral",
+    description: "Estrutura ampla e conectada com a natureza, ideal para desintoxicação e momentos de reflexão, próxima aos principais centros urbanos.",
+    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-20.jpeg"
+  },
+  {
+    region: "Goiás",
+    city: "Unidade II - Reabilitação Humanizada",
+    description: "Ambiente planejado para oferecer conforto e segurança, com equipe multidisciplinar 24h e espaços de convivência familiar.",
+    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-20.jpeg"
+  },
+  {
+    region: "Goiás",
+    city: "Unidade III - Clínica Campestre",
+    description: "Focada no bem-estar físico e mental, esta unidade dispõe de ampla área verde, piscina e atividades terapêuticas ao ar livre.",
+    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-22.jpeg"
   },
   {
     region: "Distrito Federal",
-    description: "Espaço de acolhimento focado em bem-estar integral, com fácil acesso para famílias de Brasília e entorno.",
-    city: "Região do DF e Entorno",
-    image: "https://vidadeturista.com/wp-content/uploads/2016/03/cidades-outono-2016-brasilia-df.jpg"
+    city: "Unidade IV - Centro de Apoio",
+    description: "Localizada estrategicamente para atender Brasília e entorno, oferecendo tratamento especializado com infraestrutura moderna.",
+    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-17.jpeg"
+  },
+  {
+    region: "Distrito Federal",
+    city: "Unidade V - Espaço Vida",
+    description: "Unidade acolhedora com foco em terapias em grupo e individuais, promovendo a reinserção social de forma gradativa e segura.",
+    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-3.jpeg"
+  },
+  {
+    region: "Distrito Federal",
+    city: "Unidade VI - Nova Jornada",
+    description: "Estrutura completa para internação e tratamento, combinando excelência médica com cuidado humano para pacientes e familiares.",
+    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-15.jpeg"
   }
 ];
