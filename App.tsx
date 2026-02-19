@@ -43,9 +43,8 @@ const App: React.FC = () => {
             {/* Grid principal - gap reduzido no mobile */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start mb-12 lg:mb-16">
               
-              {/* Coluna da Esquerda (Desktop) / Baixo (Mobile): Contexto Visual + Headline */}
-              {/* No mobile: Order 2 (Aparece DEPOIS do Quiz) */}
-              <div className="fade-in flex flex-col gap-4 lg:gap-6 order-2 lg:order-1">
+              {/* Coluna da Esquerda (Desktop) / Cima (Mobile): Contexto Visual + Headline */}
+              <div className="fade-in flex flex-col gap-4 lg:gap-6">
                 <div>
                   <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-2">
                     Cada Dia Sem Tratamento É Um Risco.
@@ -70,18 +69,10 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              {/* Coluna da Direita (Desktop) / Cima (Mobile): Quiz (Ação) */}
-              {/* No mobile: Order 1 (Aparece PRIMEIRO) */}
-              <div className="flex flex-col items-center lg:items-end fade-in lg:sticky lg:top-8 order-1 lg:order-2">
+              {/* Coluna da Direita (Desktop) / Baixo (Mobile): Quiz (Ação) */}
+              <div className="flex flex-col items-center lg:items-end fade-in lg:sticky lg:top-8">
                  <div className="w-full max-w-lg">
-                    <div className="text-center lg:text-left mb-4 lg:mb-6">
-                      <h2 className="text-xl font-bold text-slate-800">
-                        Entenda o seu momento atual
-                      </h2>
-                      <p className="text-slate-500 text-sm">
-                        Selecione uma opção abaixo para iniciarmos o atendimento.
-                      </p>
-                    </div>
+                    {/* Seção de texto removida conforme solicitado */}
                     
                     <Quiz onComplete={handleQuizCompletion} className="shadow-2xl border border-teal-100/50" />
                     
