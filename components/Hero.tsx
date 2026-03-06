@@ -51,8 +51,10 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <img
           className="h-full w-full object-cover opacity-40 lg:opacity-50"
-          src="https://i.postimg.cc/htFkCBy8/Gemini-Generated-Image-f1mcmyf1mcmyf1mc.png"
+          src="/assets/images/hero-bg.webp"
           alt="Apoio e recuperação"
+          loading="eager"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/20 lg:to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>

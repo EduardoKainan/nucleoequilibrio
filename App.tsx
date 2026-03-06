@@ -1,16 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { Hero } from './components/Hero';
-import { Stats } from './components/Stats';
-import { Features } from './components/Features';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import { Quiz } from './components/Quiz';
-import { Locations } from './components/Locations';
-import { Insurance } from './components/Insurance';
-import { Footer } from './components/Footer';
-import { FloatingWhatsApp } from './components/FloatingWhatsApp';
-import { StructureGallery } from './components/StructureGallery';
-import { InsuranceLogos } from './components/InsuranceLogos';
 import { Testimonials } from './components/Testimonials';
 import { PresellLocations } from './components/PresellLocations';
+import { InsuranceLogos } from './components/InsuranceLogos';
+import { LiteYouTube } from './components/LiteYouTube';
+
+// Lazy load components not needed for the initial "Presell" view
+const Hero = lazy(() => import('./components/Hero').then(module => ({ default: module.Hero })));
+const Stats = lazy(() => import('./components/Stats').then(module => ({ default: module.Stats })));
+const Features = lazy(() => import('./components/Features').then(module => ({ default: module.Features })));
+const Locations = lazy(() => import('./components/Locations').then(module => ({ default: module.Locations })));
+const Insurance = lazy(() => import('./components/Insurance').then(module => ({ default: module.Insurance })));
+const Footer = lazy(() => import('./components/Footer').then(module => ({ default: module.Footer })));
+const FloatingWhatsApp = lazy(() => import('./components/FloatingWhatsApp').then(module => ({ default: module.FloatingWhatsApp })));
+const StructureGallery = lazy(() => import('./components/StructureGallery').then(module => ({ default: module.StructureGallery })));
+
+const LoadingSpinner = () => (
+  <div className="min-h-screen flex items-center justify-center bg-slate-50">
+    <div className="w-12 h-12 border-4 border-teal-600 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 const App: React.FC = () => {
   // Estado para controlar se o quiz (presell) foi concluído
@@ -54,18 +63,13 @@ const App: React.FC = () => {
                   </p>
                 </div>
                 
-                {/* Vídeo do YouTube Incorporado */}
+                {/* Vídeo do YouTube Otimizado */}
                 <div className="relative w-full h-[250px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl bg-black border border-slate-200">
-                  <iframe 
+                  <LiteYouTube 
+                    videoId="0k3Whno19Z4"
+                    title="Apresentação da Unidade"
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/0k3Whno19Z4?si=X8_JNJxKd0SZ06QO" 
-                    title="Apresentação da Unidade" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerPolicy="strict-origin-when-cross-origin" 
-                    allowFullScreen
-                    style={{ objectFit: 'cover' }}
-                  ></iframe>
+                  />
                 </div>
               </div>
 
@@ -106,43 +110,45 @@ const App: React.FC = () => {
 
   // --- TELA 2: LANDING PAGE COMPLETA ---
   return (
-    <div className="min-h-screen flex flex-col font-sans fade-in">
-      {/* Navbar Landing Page */}
-      <header className="absolute top-0 w-full z-50 bg-transparent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <div className="font-bold text-2xl text-slate-100 drop-shadow-md tracking-tight">
-            Núcleo<span className="text-teal-400">Equilíbrio</span>
+    <Suspense fallback={<LoadingSpinner />}>
+      <div className="min-h-screen flex flex-col font-sans fade-in">
+        {/* Navbar Landing Page */}
+        <header className="absolute top-0 w-full z-50 bg-transparent">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div className="font-bold text-2xl text-slate-100 drop-shadow-md tracking-tight">
+              Núcleo<span className="text-teal-400">Equilíbrio</span>
+            </div>
+            <nav className="hidden md:flex gap-8">
+              <a href="#tratamentos" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Tratamentos</a>
+              <a href="#convenios" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Convênios</a>
+              <a href="#unidades" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Unidades</a>
+              <a 
+                href={`https://wa.me/5562996019164`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors font-medium text-sm shadow-lg inline-block"
+              >
+                Falar com Especialista
+              </a>
+            </nav>
           </div>
-          <nav className="hidden md:flex gap-8">
-            <a href="#tratamentos" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Tratamentos</a>
-            <a href="#convenios" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Convênios</a>
-            <a href="#unidades" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Unidades</a>
-            <a 
-              href={`https://wa.me/5562996019164`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors font-medium text-sm shadow-lg inline-block"
-            >
-              Falar com Especialista
-            </a>
-          </nav>
-        </div>
-      </header>
+        </header>
 
-      <main className="flex-grow">
-        <Hero />
-        <Stats />
-        <Features />
-        {/* Depoimentos inseridos antes da galeria de estrutura */}
-        <Testimonials />
-        <StructureGallery />
-        <Insurance />
-        <Locations />
-      </main>
+        <main className="flex-grow">
+          <Hero />
+          <Stats />
+          <Features />
+          {/* Depoimentos inseridos antes da galeria de estrutura */}
+          <Testimonials />
+          <StructureGallery />
+          <Insurance />
+          <Locations />
+        </main>
 
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </Suspense>
   );
 };
 

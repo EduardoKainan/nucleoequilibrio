@@ -25,11 +25,11 @@ export const INTRO_CONTENT = {
 };
 
 export const INSURANCE_LOGOS = [
-  "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2023/08/unimed.png",
-  "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2023/08/allianz.png",
-  "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2023/08/amil.png",
-  "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2023/08/porto-seguros.png",
-  "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2023/08/bradesco-saude.png"
+  "/assets/images/logos/unimed.webp",
+  "/assets/images/logos/allianz.webp",
+  "/assets/images/logos/amil.webp",
+  "/assets/images/logos/porto-seguros.webp",
+  "/assets/images/logos/bradesco-saude.webp"
 ];
 
 // Estrutura organizada por Região e Unidade para a Presell
@@ -40,25 +40,25 @@ export const REGIONAL_UNITS = [
       {
         name: "Unidade I - Recuperação Integral",
         images: [
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-20.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-14.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-10.jpeg',
+          '/assets/images/units/goias-1-main.webp',
+          '/assets/images/units/goias-1-pool.webp',
+          '/assets/images/units/goias-1-room.webp',
         ]
       },
       {
         name: "Unidade II - Reabilitação Humanizada",
         images: [
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-20.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-8.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-7.jpeg',
+          '/assets/images/units/goias-2-main.webp',
+          '/assets/images/units/goias-2-garden.webp',
+          '/assets/images/units/goias-2-room.webp',
         ]
       },
       {
         name: "Unidade III - Clínica Campestre",
         images: [
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-22.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-11.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-3.jpeg',
+          '/assets/images/units/goias-3-main.webp',
+          '/assets/images/units/goias-3-pool.webp',
+          '/assets/images/units/goias-3-room.webp',
         ]
       }
     ]
@@ -69,25 +69,25 @@ export const REGIONAL_UNITS = [
       {
         name: "Unidade IV - Centro de Apoio",
         images: [
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-17.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-14.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-12.jpeg',
+          '/assets/images/units/df-4-main.webp',
+          '/assets/images/units/df-4-pool.webp',
+          '/assets/images/units/df-4-room.webp',
         ]
       },
       {
         name: "Unidade V - Espaço Vida",
         images: [
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-3.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-1.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-9.jpeg',
+          '/assets/images/units/df-5-main.webp',
+          '/assets/images/units/df-5-pool.webp',
+          '/assets/images/units/df-5-room.webp',
         ]
       },
       {
         name: "Unidade VI - Nova Jornada",
         images: [
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-15.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-6.jpeg',
-          'https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-9.jpeg'
+          '/assets/images/units/df-6-main.webp',
+          '/assets/images/units/df-6-pool.webp',
+          '/assets/images/units/df-6-room.webp'
         ]
       }
     ]
@@ -99,10 +99,10 @@ export const PRESELL_IMAGES = REGIONAL_UNITS.flatMap(r => r.units.flatMap(u => u
 
 // URLs dos prints de depoimentos
 export const TESTIMONIALS = [
-  "https://i.postimg.cc/RVNBqd8t/Gemini_Generated_Image_e92z6fe92z6fe92z.jpg",
-  "https://i.postimg.cc/m2tshjqF/Gemini_Generated_Image_407nx6407nx6407n.jpg",
-  "https://i.postimg.cc/Kc9bZw9t/Gemini_Generated_Image_9j55p69j55p69j55.jpg",
-  "https://i.postimg.cc/GhHC9KNy/Gemini_Generated_Image_pzh7qapzh7qapzh7.jpg"
+  "/assets/images/testimonials/testimonial-1.webp",
+  "/assets/images/testimonials/testimonial-2.webp",
+  "/assets/images/testimonials/testimonial-3.webp",
+  "/assets/images/testimonials/testimonial-4.webp"
 ];
 
 export const STATS = [
@@ -170,36 +170,36 @@ export const LOCATIONS = [
     region: "Goiás",
     city: "Unidade I - Recuperação Integral",
     description: "Estrutura ampla e conectada com a natureza, ideal para desintoxicação e momentos de reflexão, próxima aos principais centros urbanos.",
-    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-1-20.jpeg"
+    image: "/assets/images/units/goias-1-main.webp"
   },
   {
     region: "Goiás",
     city: "Unidade II - Reabilitação Humanizada",
     description: "Ambiente planejado para oferecer conforto e segurança, com equipe multidisciplinar 24h e espaços de convivência familiar.",
-    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-2-20.jpeg"
+    image: "/assets/images/units/goias-2-main.webp"
   },
   {
     region: "Goiás",
     city: "Unidade III - Clínica Campestre",
     description: "Focada no bem-estar físico e mental, esta unidade dispõe de ampla área verde, piscina e atividades terapêuticas ao ar livre.",
-    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-3-22.jpeg"
+    image: "/assets/images/units/goias-3-main.webp"
   },
   {
     region: "Distrito Federal",
     city: "Unidade IV - Centro de Apoio",
     description: "Localizada estrategicamente para atender Brasília e entorno, oferecendo tratamento especializado com infraestrutura moderna.",
-    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-4-17.jpeg"
+    image: "/assets/images/units/df-4-main.webp"
   },
   {
     region: "Distrito Federal",
     city: "Unidade V - Espaço Vida",
     description: "Unidade acolhedora com foco em terapias em grupo e individuais, promovendo a reinserção social de forma gradativa e segura.",
-    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-5-3.jpeg"
+    image: "/assets/images/units/df-5-main.webp"
   },
   {
     region: "Distrito Federal",
     city: "Unidade VI - Nova Jornada",
     description: "Estrutura completa para internação e tratamento, combinando excelência médica com cuidado humano para pacientes e familiares.",
-    image: "https://clinicasgoiasbrasil.com.br/wp-content/uploads/2024/11/Unidade-6-15.jpeg"
+    image: "/assets/images/units/df-6-main.webp"
   }
 ];

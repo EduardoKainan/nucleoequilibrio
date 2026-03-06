@@ -30,6 +30,9 @@ export const InsuranceLogos: React.FC<InsuranceLogosProps> = ({ className = "", 
                       src={logo} 
                       alt="Convênio" 
                       className={`h-12 md:h-14 w-auto object-contain transition-all duration-300 ${variant === 'dark' ? 'brightness-0 invert opacity-70 hover:opacity-100 hover:brightness-100 hover:invert-0' : 'grayscale opacity-60 hover:grayscale-0 hover:opacity-100'}`} 
+                      loading="lazy"
+                      width="120"
+                      height="60"
                     />
                 </div>
              ))}

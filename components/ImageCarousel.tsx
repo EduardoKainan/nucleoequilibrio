@@ -40,6 +40,8 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ className = "", im
             src={image}
             alt={`Estrutura da Unidade ${index + 1}`}
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
           {/* Overlay gradiente para melhorar leitura de textos se necessário, ou apenas estética */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
