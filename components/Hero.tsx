@@ -51,7 +51,9 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <img
           className="h-full w-full object-cover opacity-40 lg:opacity-50"
-          src="assets/images/hero-bg.webp"
+          src="/assets/images/hero-bg.webp"
+          srcSet="/assets/images/hero-bg-640w.webp 640w, /assets/images/hero-bg-960w.webp 960w, /assets/images/hero-bg-1280w.webp 1280w"
+          sizes="100vw"
           alt="Apoio e recuperação"
           loading="eager"
           decoding="async"

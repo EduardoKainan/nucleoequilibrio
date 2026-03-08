@@ -38,6 +38,8 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ className = "", im
         >
           <img
             src={image}
+            srcSet={image.includes('.webp') ? `${image.replace('.webp', '-640w.webp')} 640w, ${image.replace('.webp', '-960w.webp')} 960w, ${image.replace('.webp', '-1280w.webp')} 1280w` : undefined}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             alt={`Estrutura da Unidade ${index + 1}`}
             className="w-full h-full object-cover"
             loading="lazy"

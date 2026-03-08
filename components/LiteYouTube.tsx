@@ -4,9 +4,10 @@ interface LiteYouTubeProps {
   videoId: string;
   title: string;
   className?: string;
+  priority?: boolean;
 }
 
-export const LiteYouTube: React.FC<LiteYouTubeProps> = ({ videoId, title, className = '' }) => {
+export const LiteYouTube: React.FC<LiteYouTubeProps> = ({ videoId, title, className = '', priority = false }) => {
   const [isIframeLoaded, setIsIframeLoaded] = useState(false);
 
   // Using hqdefault.jpg as it's standard and usually available. 
@@ -25,7 +26,9 @@ export const LiteYouTube: React.FC<LiteYouTubeProps> = ({ videoId, title, classN
             src={thumbnailUrl} 
             alt={title} 
             className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
+            fetchPriority={priority ? "high" : "auto"}
+            decoding="async"
             width="480"
             height="360"
           />

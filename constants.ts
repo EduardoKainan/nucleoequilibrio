@@ -25,11 +25,11 @@ export const INTRO_CONTENT = {
 };
 
 export const INSURANCE_LOGOS = [
-  "assets/images/logos/unimed.webp",
-  "assets/images/logos/allianz.webp",
-  "assets/images/logos/amil.webp",
-  "assets/images/logos/porto-seguros.webp",
-  "assets/images/logos/bradesco-saude.webp"
+  "/assets/images/logos/unimed.webp",
+  "/assets/images/logos/allianz.webp",
+  "/assets/images/logos/amil.webp",
+  "/assets/images/logos/porto-seguros.webp",
+  "/assets/images/logos/bradesco-saude.webp"
 ];
 
 // Estrutura organizada por Região e Unidade para a Presell
@@ -40,25 +40,25 @@ export const REGIONAL_UNITS = [
       {
         name: "Unidade I - Recuperação Integral",
         images: [
-          'assets/images/units/goias-1-main.webp',
-          'assets/images/units/goias-1-pool.webp',
-          'assets/images/units/goias-1-room.webp',
+          '/assets/images/units/goias-1-main.webp',
+          '/assets/images/units/goias-1-pool.webp',
+          '/assets/images/units/goias-1-room.webp',
         ]
       },
       {
         name: "Unidade II - Reabilitação Humanizada",
         images: [
-          'assets/images/units/goias-2-main.webp',
-          'assets/images/units/goias-2-garden.webp',
-          'assets/images/units/goias-2-room.webp',
+          '/assets/images/units/goias-2-main.webp',
+          '/assets/images/units/goias-2-garden.webp',
+          '/assets/images/units/goias-2-room.webp',
         ]
       },
       {
         name: "Unidade III - Clínica Campestre",
         images: [
-          'assets/images/units/goias-3-main.webp',
-          'assets/images/units/goias-3-pool.webp',
-          'assets/images/units/goias-3-room.webp',
+          '/assets/images/units/goias-3-main.webp',
+          '/assets/images/units/goias-3-pool.webp',
+          '/assets/images/units/goias-3-room.webp',
         ]
       }
     ]
@@ -69,25 +69,25 @@ export const REGIONAL_UNITS = [
       {
         name: "Unidade IV - Centro de Apoio",
         images: [
-          'assets/images/units/df-4-main.webp',
-          'assets/images/units/df-4-pool.webp',
-          'assets/images/units/df-4-room.webp',
+          '/assets/images/units/df-4-main.webp',
+          '/assets/images/units/df-4-pool.webp',
+          '/assets/images/units/df-4-room.webp',
         ]
       },
       {
         name: "Unidade V - Espaço Vida",
         images: [
-          'assets/images/units/df-5-main.webp',
-          'assets/images/units/df-5-pool.webp',
-          'assets/images/units/df-5-room.webp',
+          '/assets/images/units/df-5-main.webp',
+          '/assets/images/units/df-5-pool.webp',
+          '/assets/images/units/df-5-room.webp',
         ]
       },
       {
         name: "Unidade VI - Nova Jornada",
         images: [
-          'assets/images/units/df-6-main.webp',
-          'assets/images/units/df-6-pool.webp',
-          'assets/images/units/df-6-room.webp'
+          '/assets/images/units/df-6-main.webp',
+          '/assets/images/units/df-6-pool.webp',
+          '/assets/images/units/df-6-room.webp'
         ]
       }
     ]
@@ -99,10 +99,10 @@ export const PRESELL_IMAGES = REGIONAL_UNITS.flatMap(r => r.units.flatMap(u => u
 
 // URLs dos prints de depoimentos
 export const TESTIMONIALS = [
-  "assets/images/testimonials/testimonial-1.webp",
-  "assets/images/testimonials/testimonial-2.webp",
-  "assets/images/testimonials/testimonial-3.webp",
-  "assets/images/testimonials/testimonial-4.webp"
+  "/assets/images/testimonials/testimonial-1.webp",
+  "/assets/images/testimonials/testimonial-2.webp",
+  "/assets/images/testimonials/testimonial-3.webp",
+  "/assets/images/testimonials/testimonial-4.webp"
 ];
 
 export const STATS = [
@@ -170,36 +170,36 @@ export const LOCATIONS = [
     region: "Goiás",
     city: "Unidade I - Recuperação Integral",
     description: "Estrutura ampla e conectada com a natureza, ideal para desintoxicação e momentos de reflexão, próxima aos principais centros urbanos.",
-    image: "assets/images/units/goias-1-main.webp"
+    image: "/assets/images/units/goias-1-main.webp"
   },
   {
     region: "Goiás",
     city: "Unidade II - Reabilitação Humanizada",
     description: "Ambiente planejado para oferecer conforto e segurança, com equipe multidisciplinar 24h e espaços de convivência familiar.",
-    image: "assets/images/units/goias-2-main.webp"
+    image: "/assets/images/units/goias-2-main.webp"
   },
   {
     region: "Goiás",
     city: "Unidade III - Clínica Campestre",
     description: "Focada no bem-estar físico e mental, esta unidade dispõe de ampla área verde, piscina e atividades terapêuticas ao ar livre.",
-    image: "assets/images/units/goias-3-main.webp"
+    image: "/assets/images/units/goias-3-main.webp"
   },
   {
     region: "Distrito Federal",
     city: "Unidade IV - Centro de Apoio",
     description: "Localizada estrategicamente para atender Brasília e entorno, oferecendo tratamento especializado com infraestrutura moderna.",
-    image: "assets/images/units/df-4-main.webp"
+    image: "/assets/images/units/df-4-main.webp"
   },
   {
     region: "Distrito Federal",
     city: "Unidade V - Espaço Vida",
     description: "Unidade acolhedora com foco em terapias em grupo e individuais, promovendo a reinserção social de forma gradativa e segura.",
-    image: "assets/images/units/df-5-main.webp"
+    image: "/assets/images/units/df-5-main.webp"
   },
   {
     region: "Distrito Federal",
     city: "Unidade VI - Nova Jornada",
     description: "Estrutura completa para internação e tratamento, combinando excelência médica com cuidado humano para pacientes e familiares.",
-    image: "assets/images/units/df-6-main.webp"
+    image: "/assets/images/units/df-6-main.webp"
   }
 ];

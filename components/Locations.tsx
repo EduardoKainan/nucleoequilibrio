@@ -24,8 +24,12 @@ export const Locations: React.FC = () => {
               <div className="h-56 w-full bg-slate-200 relative group">
                  <img 
                    src={loc.image} 
+                   srcSet={loc.image.includes('.webp') ? `${loc.image.replace('.webp', '-640w.webp')} 640w, ${loc.image.replace('.webp', '-960w.webp')} 960w, ${loc.image.replace('.webp', '-1280w.webp')} 1280w` : undefined}
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                    alt={loc.city}
                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                   loading="lazy"
+                   decoding="async"
                  />
                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-semibold text-teal-800 flex items-center gap-1 shadow-sm">
                     <MapPin size={14} />

@@ -80,11 +80,34 @@ async function processImages() {
       console.log(`Processing ${img.output}...`);
       const buffer = await downloadImage(img.url);
       
-      await sharp(buffer)
-        .webp({ quality: 80 })
-        .toFile(path.join(outputDir, img.output));
+      const isUnitOrHero = img.output.includes('units/') || img.output.includes('hero-bg');
+      
+      if (isUnitOrHero) {
+        const sizes = [640, 960, 1280];
+        const ext = path.extname(img.output);
+        const base = path.basename(img.output, ext);
+        const dir = path.dirname(img.output);
         
-      console.log(`Saved ${img.output}`);
+        for (const size of sizes) {
+          const resizedOutput = path.join(dir, `${base}-${size}w${ext}`);
+          await sharp(buffer)
+            .resize({ width: size, withoutEnlargement: true })
+            .webp({ quality: 80 })
+            .toFile(path.join(outputDir, resizedOutput));
+          console.log(`Saved ${resizedOutput}`);
+        }
+        
+        // Also save original as fallback
+        await sharp(buffer)
+          .webp({ quality: 80 })
+          .toFile(path.join(outputDir, img.output));
+        console.log(`Saved ${img.output}`);
+      } else {
+        await sharp(buffer)
+          .webp({ quality: 80 })
+          .toFile(path.join(outputDir, img.output));
+        console.log(`Saved ${img.output}`);
+      }
     } catch (error) {
       console.error(`Error processing ${img.output}:`, error.message);
     }

@@ -4,6 +4,8 @@ import { Testimonials } from './components/Testimonials';
 import { PresellLocations } from './components/PresellLocations';
 import { InsuranceLogos } from './components/InsuranceLogos';
 import { LiteYouTube } from './components/LiteYouTube';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { ShieldCheck, Star } from 'lucide-react';
 
 // Lazy load components not needed for the initial "Presell" view
 const Hero = lazy(() => import('./components/Hero').then(module => ({ default: module.Hero })));
@@ -12,7 +14,6 @@ const Features = lazy(() => import('./components/Features').then(module => ({ de
 const Locations = lazy(() => import('./components/Locations').then(module => ({ default: module.Locations })));
 const Insurance = lazy(() => import('./components/Insurance').then(module => ({ default: module.Insurance })));
 const Footer = lazy(() => import('./components/Footer').then(module => ({ default: module.Footer })));
-const FloatingWhatsApp = lazy(() => import('./components/FloatingWhatsApp').then(module => ({ default: module.FloatingWhatsApp })));
 const StructureGallery = lazy(() => import('./components/StructureGallery').then(module => ({ default: module.StructureGallery })));
 
 const LoadingSpinner = () => (
@@ -55,6 +56,12 @@ const App: React.FC = () => {
               {/* Coluna da Esquerda (Desktop) / Cima (Mobile): Contexto Visual + Headline */}
               <div className="fade-in flex flex-col gap-4 lg:gap-6">
                 <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="flex text-yellow-400">
+                      {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
+                    </div>
+                    <span className="text-sm font-medium text-slate-600">+500 famílias atendidas</span>
+                  </div>
                   <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-2">
                     Cada Dia Sem Tratamento É Um Risco.
                   </h1>
@@ -69,7 +76,13 @@ const App: React.FC = () => {
                     videoId="0k3Whno19Z4"
                     title="Apresentação da Unidade"
                     className="w-full h-full"
+                    priority={true}
                   />
+                </div>
+                
+                <div className="flex items-center gap-2 text-sm text-slate-500 bg-white p-3 rounded-lg border border-slate-100 shadow-sm">
+                  <ShieldCheck className="text-teal-600" size={20} />
+                  <span>Garantia de sigilo absoluto e atendimento 24 horas.</span>
                 </div>
               </div>
 
@@ -104,6 +117,7 @@ const App: React.FC = () => {
 
           </div>
         </main>
+        <FloatingWhatsApp />
       </div>
     );
   }
