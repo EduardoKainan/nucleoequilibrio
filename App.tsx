@@ -1,8 +1,5 @@
 import React, { useEffect, useState, Suspense, lazy } from 'react';
 import { Quiz } from './components/Quiz';
-import { Testimonials } from './components/Testimonials';
-import { PresellLocations } from './components/PresellLocations';
-import { InsuranceLogos } from './components/InsuranceLogos';
 import { LiteYouTube } from './components/LiteYouTube';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ShieldCheck, Star } from 'lucide-react';
@@ -15,6 +12,11 @@ const Locations = lazy(() => import('./components/Locations').then(module => ({ 
 const Insurance = lazy(() => import('./components/Insurance').then(module => ({ default: module.Insurance })));
 const Footer = lazy(() => import('./components/Footer').then(module => ({ default: module.Footer })));
 const StructureGallery = lazy(() => import('./components/StructureGallery').then(module => ({ default: module.StructureGallery })));
+
+// Lazy load below-the-fold components for Presell view
+const Testimonials = lazy(() => import('./components/Testimonials').then(module => ({ default: module.Testimonials })));
+const PresellLocations = lazy(() => import('./components/PresellLocations').then(module => ({ default: module.PresellLocations })));
+const InsuranceLogos = lazy(() => import('./components/InsuranceLogos').then(module => ({ default: module.InsuranceLogos })));
 
 const LoadingSpinner = () => (
   <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -101,19 +103,21 @@ const App: React.FC = () => {
             </div>
 
             {/* Seção de Depoimentos na Presell (Antes das fotos) */}
-            <div className="fade-in border-t border-slate-200 pt-10 lg:pt-12">
-               <Testimonials />
-            </div>
+            <Suspense fallback={<div className="h-40 flex items-center justify-center"><div className="w-8 h-8 border-4 border-teal-600 border-t-transparent rounded-full animate-spin"></div></div>}>
+              <div className="fade-in border-t border-slate-200 pt-10 lg:pt-12">
+                 <Testimonials />
+              </div>
 
-            {/* Seção Separada para Imagens das Unidades - AGORA USANDO PresellLocations */}
-            <div className="fade-in pt-10 lg:pt-12 mb-8 border-t border-slate-200">
-                <PresellLocations />
-            </div>
-            
-            {/* Seção de Convênios na Presell */}
-            <div className="fade-in pt-8 border-t border-slate-200">
-               <InsuranceLogos title="Atendemos os principais planos" />
-            </div>
+              {/* Seção Separada para Imagens das Unidades - AGORA USANDO PresellLocations */}
+              <div className="fade-in pt-10 lg:pt-12 mb-8 border-t border-slate-200">
+                  <PresellLocations />
+              </div>
+              
+              {/* Seção de Convênios na Presell */}
+              <div className="fade-in pt-8 border-t border-slate-200">
+                 <InsuranceLogos title="Atendemos os principais planos" />
+              </div>
+            </Suspense>
 
           </div>
         </main>
