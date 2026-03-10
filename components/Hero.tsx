@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
           src="/assets/images/hero-bg.webp"
           srcSet="/assets/images/hero-bg-640w.webp 640w, /assets/images/hero-bg-960w.webp 960w, /assets/images/hero-bg-1280w.webp 1280w"
           sizes="100vw"
-          alt="Apoio e recuperação"
+          alt="Apoio e acolhimento"
           loading="eager"
           decoding="async"
         />

@@ -13,7 +13,7 @@ export const NAV_LINKS = [
 ];
 
 export const HERO_CONTENT = {
-  headline: "O Cuidado Certo para Dependência Química, Alcoolismo e Saúde Mental",
+  headline: "O Cuidado Certo para Saúde Mental e Equilíbrio Emocional",
   subheadline: "Ajudamos pessoas e famílias a retomarem o equilíbrio, a dignidade e a qualidade de vida por meio de um acompanhamento humano, seguro e especializado.",
   cta: "Fale agora com um especialista",
   ctaPhone: "Ligue Agora"
@@ -21,7 +21,7 @@ export const HERO_CONTENT = {
 
 export const INTRO_CONTENT = {
   title: "Cuidar de Quem Você Ama Exige Responsabilidade e Profissionalismo",
-  text: "Sabemos que lidar com dependência química, alcoolismo ou transtornos emocionais é uma das decisões mais difíceis para uma família. Por isso, oferecemos acolhimento, orientação e tratamento individualizado, respeitando cada história e cada momento. Nossa equipe é formada por profissionais experientes e qualificados, preparados para conduzir o tratamento com ética, sigilo e responsabilidade."
+  text: "Sabemos que lidar com transtornos emocionais, crises de ansiedade ou depressão é uma das decisões mais difíceis para uma família. Por isso, oferecemos acolhimento, orientação e tratamento individualizado, respeitando cada história e cada momento. Nossa equipe é formada por profissionais experientes e qualificados, preparados para conduzir o tratamento com ética, sigilo e responsabilidade."
 };
 
 export const INSURANCE_LOGOS = [
@@ -38,7 +38,7 @@ export const REGIONAL_UNITS = [
     region: "Goiás",
     units: [
       {
-        name: "Unidade I - Recuperação Integral",
+        name: "Unidade I - Saúde Integral",
         images: [
           '/assets/images/units/goias-1-main.webp',
           '/assets/images/units/goias-1-pool.webp',
@@ -46,7 +46,7 @@ export const REGIONAL_UNITS = [
         ]
       },
       {
-        name: "Unidade II - Reabilitação Humanizada",
+        name: "Unidade II - Acolhimento Humanizado",
         images: [
           '/assets/images/units/goias-2-main.webp',
           '/assets/images/units/goias-2-garden.webp',
@@ -54,7 +54,7 @@ export const REGIONAL_UNITS = [
         ]
       },
       {
-        name: "Unidade III - Clínica Campestre",
+        name: "Unidade III - Espaço Campestre",
         images: [
           '/assets/images/units/goias-3-main.webp',
           '/assets/images/units/goias-3-pool.webp',
@@ -115,22 +115,22 @@ export const STATS = [
 export const FEATURES = [
   {
     icon: Activity,
-    title: "Dependência Química",
+    title: "Transtornos Comportamentais",
     description: "Cada pessoa manifesta sintomas e desafios diferentes. Nosso tratamento é individualizado e conduzido por equipe multidisciplinar."
   },
   {
     icon: Ban,
-    title: "Dependência Alcoólica",
-    description: "O tratamento inclui desintoxicação assistida, acompanhamento terapêutico e suporte contínuo à família."
+    title: "Esgotamento e Burnout",
+    description: "O tratamento inclui acompanhamento terapêutico intensivo, repouso assistido e suporte contínuo à família."
   },
   {
     icon: Heart,
-    title: "Tratamento Feminino",
+    title: "Acolhimento Feminino",
     description: "Ambiente acolhedor e seguro, respeitando as particularidades emocionais, sociais e físicas da mulher."
   },
   {
     icon: Baby,
-    title: "Tratamento para Menores",
+    title: "Apoio para Menores",
     description: "Atendimento especializado para adolescentes, com foco no desenvolvimento saudável e apoio familiar."
   },
   {
@@ -140,13 +140,13 @@ export const FEATURES = [
   },
   {
     icon: FileCheck,
-    title: "Internação Voluntária",
-    description: "Indicada quando o paciente reconhece a necessidade de ajuda e aceita o tratamento como caminho de recuperação."
+    title: "Acolhimento Terapêutico",
+    description: "Indicado quando a pessoa reconhece a necessidade de um afastamento temporário para focar em sua saúde emocional."
   },
   {
     icon: Ambulance,
-    title: "Internação Involuntária",
-    description: "Quando a família precisa agir para proteger a vida e a saúde do paciente, sempre dentro da lei e com respaldo médico."
+    title: "Apoio Familiar Intensivo",
+    description: "Quando a família precisa de intervenção profissional para proteger o bem-estar do ente querido, com total respaldo médico e psicológico."
   }
 ];
 
@@ -168,26 +168,26 @@ export const QUIZ_QUESTIONS = [
 export const LOCATIONS = [
   {
     region: "Goiás",
-    city: "Unidade I - Recuperação Integral",
-    description: "Estrutura ampla e conectada com a natureza, ideal para desintoxicação e momentos de reflexão, próxima aos principais centros urbanos.",
+    city: "Unidade I - Saúde Integral",
+    description: "Estrutura ampla e conectada com a natureza, ideal para revitalização e momentos de reflexão, próxima aos principais centros urbanos.",
     image: "/assets/images/units/goias-1-main.webp"
   },
   {
     region: "Goiás",
-    city: "Unidade II - Reabilitação Humanizada",
+    city: "Unidade II - Acolhimento Humanizado",
     description: "Ambiente planejado para oferecer conforto e segurança, com equipe multidisciplinar 24h e espaços de convivência familiar.",
     image: "/assets/images/units/goias-2-main.webp"
   },
   {
     region: "Goiás",
-    city: "Unidade III - Clínica Campestre",
+    city: "Unidade III - Espaço Campestre",
     description: "Focada no bem-estar físico e mental, esta unidade dispõe de ampla área verde, piscina e atividades terapêuticas ao ar livre.",
     image: "/assets/images/units/goias-3-main.webp"
   },
   {
     region: "Distrito Federal",
     city: "Unidade IV - Centro de Apoio",
-    description: "Localizada estrategicamente para atender Brasília e entorno, oferecendo tratamento especializado com infraestrutura moderna.",
+    description: "Localizada estrategicamente para atender Brasília e entorno, oferecendo suporte especializado com infraestrutura moderna.",
     image: "/assets/images/units/df-4-main.webp"
   },
   {
@@ -199,7 +199,7 @@ export const LOCATIONS = [
   {
     region: "Distrito Federal",
     city: "Unidade VI - Nova Jornada",
-    description: "Estrutura completa para internação e tratamento, combinando excelência médica com cuidado humano para pacientes e familiares.",
+    description: "Estrutura completa para acolhimento e acompanhamento, combinando excelência médica com cuidado humano para pacientes e familiares.",
     image: "/assets/images/units/df-6-main.webp"
   }
 ];

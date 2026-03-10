@@ -17,7 +17,7 @@ export const PresellLocations: React.FC = () => {
             Estrutura Completa
         </div>
         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
-            Onde a recuperação acontece
+            Onde a transformação acontece
         </h2>
         <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base">
             Selecione a região abaixo para conhecer nossas unidades especializadas.

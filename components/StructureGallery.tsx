@@ -10,7 +10,7 @@ export const StructureGallery: React.FC = () => {
             Nossa Estrutura
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-slate-500">
-            Ambientes acolhedores, contato com a natureza e espaços planejados para o bem-estar e recuperação dos nossos pacientes.
+            Ambientes acolhedores, contato com a natureza e espaços planejados para o bem-estar e evolução dos nossos pacientes.
           </p>
         </div>
         
