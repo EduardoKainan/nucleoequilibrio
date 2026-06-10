@@ -1,10 +1,8 @@
 import React from 'react';
-import { FEATURES, INTRO_CONTENT, WHATSAPP_NUMBER, WHATSAPP_MESSAGE } from '../constants';
+import { FEATURES, INTRO_CONTENT, WHATSAPP_URL } from '../constants';
 import { ArrowRight } from 'lucide-react';
 
 export const Features: React.FC = () => {
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-
   return (
     <div id="tratamentos" className="py-16 bg-white overflow-hidden lg:py-24">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +18,7 @@ export const Features: React.FC = () => {
                   {INTRO_CONTENT.text}
                 </p>
                 <a 
-                  href={whatsappUrl}
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-teal-700 font-semibold cursor-pointer hover:text-teal-800 transition-colors inline-flex"
@@ -61,7 +59,7 @@ export const Features: React.FC = () => {
                 </div>
                 <div className="mt-6 pt-6 border-t border-slate-200">
                    <a 
-                     href={whatsappUrl}
+                     href={WHATSAPP_URL}
                      target="_blank"
                      rel="noopener noreferrer"
                      className="text-teal-600 font-medium text-sm flex items-center gap-1 hover:text-teal-800 transition-colors inline-flex"

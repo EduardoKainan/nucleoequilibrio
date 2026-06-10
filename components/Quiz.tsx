@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { QUIZ_QUESTIONS, WHATSAPP_NUMBER, WHATSAPP_MESSAGE, PHONE_NUMBER } from '../constants';
+import { QUIZ_QUESTIONS, WHATSAPP_URL, PHONE_NUMBER } from '../constants';
 import { Loader2, CheckCircle2, MessageCircle, Globe, Phone, FileQuestion, ArrowRight } from 'lucide-react';
 import { Button } from './ui/Button';
 
@@ -17,7 +17,6 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
   // Respostas (mantidas caso o usuário opte pelo fluxo de perguntas)
   const [answers, setAnswers] = useState<Record<number, string>>({});
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
   const phoneUrl = `tel:${PHONE_NUMBER}`;
 
   const handleStartQuiz = () => {
@@ -94,7 +93,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
                     </Button>
 
                     <Button 
-                        href={whatsappUrl}
+                        href={WHATSAPP_URL}
                         target="_blank"
                         className="w-full py-4 text-lg bg-green-600 hover:bg-green-700 shadow-md flex items-center justify-center gap-3"
                     >
@@ -182,7 +181,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
 
             <div className="flex flex-col gap-4 max-w-sm mx-auto pt-4">
               <Button 
-                href={whatsappUrl} 
+                href={WHATSAPP_URL}
                 target="_blank"
                 className="w-full gap-2 py-4 text-lg shadow-lg animate-pulse"
               >

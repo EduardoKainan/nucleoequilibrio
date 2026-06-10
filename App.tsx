@@ -3,6 +3,7 @@ import { Quiz } from './components/Quiz';
 import { LiteYouTube } from './components/LiteYouTube';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ShieldCheck, Star } from 'lucide-react';
+import { WHATSAPP_URL } from './constants';
 
 // Lazy load components not needed for the initial "Presell" view
 const Hero = lazy(() => import('./components/Hero').then(module => ({ default: module.Hero })));
@@ -141,7 +142,7 @@ const App: React.FC = () => {
               <a href="#convenios" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Convênios</a>
               <a href="#unidades" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Unidades</a>
               <a 
-                href={`https://wa.me/5562996019164`}
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors font-medium text-sm shadow-lg inline-block"

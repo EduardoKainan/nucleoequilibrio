@@ -1,5 +1,6 @@
 import React from 'react';
-import { Shield } from 'lucide-react';
+import { Phone, Shield } from 'lucide-react';
+import { PHONE_DISPLAY, PHONE_NUMBER } from '../constants';
 
 export const Footer: React.FC = () => {
   return (
@@ -11,6 +12,13 @@ export const Footer: React.FC = () => {
           <p className="text-sm max-w-xs">
             Dedicados a reconstruir histórias e promover o bem-estar integral em Goiás e DF.
           </p>
+          <a
+            href={`tel:${PHONE_NUMBER}`}
+            className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors"
+          >
+            <Phone size={16} />
+            {PHONE_DISPLAY}
+          </a>
         </div>
 
         <div className="flex flex-col items-center md:items-end">

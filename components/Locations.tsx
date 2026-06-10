@@ -1,11 +1,9 @@
 import React from 'react';
-import { LOCATIONS, WHATSAPP_MESSAGE, WHATSAPP_NUMBER } from '../constants';
+import { LOCATIONS, WHATSAPP_URL } from '../constants';
 import { MapPin } from 'lucide-react';
 import { Button } from './ui/Button';
 
 export const Locations: React.FC = () => {
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-
   return (
     <div id="unidades" className="bg-slate-50 py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +42,7 @@ export const Locations: React.FC = () => {
                   </p>
                 </div>
                 <Button 
-                    href={whatsappUrl} 
+                    href={WHATSAPP_URL}
                     target="_blank"
                     variant="outline" 
                     className="w-full text-sm py-2"

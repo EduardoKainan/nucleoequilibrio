@@ -1,10 +1,9 @@
 import React from 'react';
-import { HERO_CONTENT, WHATSAPP_MESSAGE, WHATSAPP_NUMBER, PHONE_NUMBER } from '../constants';
+import { HERO_CONTENT, WHATSAPP_URL, PHONE_NUMBER } from '../constants';
 import { Button } from './ui/Button';
 import { MessageCircle, CheckCircle, Phone } from 'lucide-react';
 
 export const Hero: React.FC = () => {
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
   const phoneUrl = `tel:${PHONE_NUMBER}`;
 
   return (
@@ -26,7 +25,7 @@ export const Hero: React.FC = () => {
               </p>
               <div className="mt-8 sm:mt-10 sm:flex sm:justify-center lg:justify-start gap-4">
                 <Button 
-                  href={whatsappUrl} 
+                  href={WHATSAPP_URL}
                   target="_blank"
                   className="w-full sm:w-auto gap-2 text-lg px-8 py-4 shadow-lg"
                 >

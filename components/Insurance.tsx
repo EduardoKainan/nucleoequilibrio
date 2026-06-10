@@ -1,13 +1,10 @@
 import React from 'react';
 import { Button } from './ui/Button';
 import { FileCheck } from 'lucide-react';
-import { WHATSAPP_NUMBER } from '../constants';
+import { WHATSAPP_URL } from '../constants';
 import { InsuranceLogos } from './InsuranceLogos';
 
 export const Insurance: React.FC = () => {
-    const message = "Olá, gostaria de verificar a cobertura do meu plano de saúde.";
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
   return (
     <div id="convenios" className="bg-teal-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +22,7 @@ export const Insurance: React.FC = () => {
              </div>
              <div className="lg:w-1/3 flex justify-center lg:justify-end">
                 <Button 
-                    href={whatsappUrl}
+                    href={WHATSAPP_URL}
                     target="_blank"
                     className="w-full sm:w-auto bg-white text-teal-900 hover:bg-teal-50 border-transparent text-lg py-4 px-8 font-bold gap-2"
                 >
