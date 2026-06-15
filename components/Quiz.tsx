@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { QUIZ_QUESTIONS, WHATSAPP_URL, PHONE_NUMBER } from '../constants';
+import {
+  QUIZ_QUESTIONS,
+  WHATSAPP_URL,
+  SECONDARY_WHATSAPP_URL,
+  PHONE_NUMBER
+} from '../constants';
 import { Loader2, CheckCircle2, MessageCircle, Globe, Phone, FileQuestion, ArrowRight } from 'lucide-react';
 import { Button } from './ui/Button';
 
@@ -93,12 +98,21 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
                     </Button>
 
                     <Button 
-                        href={WHATSAPP_URL}
+                        href={SECONDARY_WHATSAPP_URL}
                         target="_blank"
                         className="w-full py-4 text-lg bg-green-600 hover:bg-green-700 shadow-md flex items-center justify-center gap-3"
                     >
                         <MessageCircle className="w-6 h-6" />
-                        <span>Falar com Terapeuta</span>
+                        <span>Falar no WhatsApp</span>
+                    </Button>
+
+                    <Button
+                        href={WHATSAPP_URL}
+                        target="_blank"
+                        className="w-full py-4 text-lg bg-green-700 hover:bg-green-800 shadow-md flex items-center justify-center gap-3"
+                    >
+                        <MessageCircle className="w-6 h-6" />
+                        <span>Outro Atendimento no WhatsApp</span>
                     </Button>
 
                     <Button 
@@ -190,6 +204,15 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
               </Button>
               
               <Button 
+                href={SECONDARY_WHATSAPP_URL}
+                target="_blank"
+                className="w-full gap-2 py-4 text-lg shadow-lg"
+              >
+                <MessageCircle size={24} />
+                Segunda Opção de Atendimento
+              </Button>
+
+              <Button
                 variant="outline" 
                 onClick={handleSiteClick} 
                 className="w-full gap-2 border-slate-300 text-slate-600 hover:text-teal-700 hover:border-teal-500"

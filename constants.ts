@@ -1,6 +1,7 @@
 import { Brain, Heart, Activity, Ban, Baby, FileCheck, Ambulance } from 'lucide-react';
 
 export const WHATSAPP_URL = "https://wa.me/message/ZQWUI7BADBR3P1";
+export const SECONDARY_WHATSAPP_URL = "https://wa.me/message/BQ5VB3IPUNMRC1";
 export const PHONE_NUMBER = "556293423326";
 export const PHONE_DISPLAY = "+55 62 9342-3326";
 

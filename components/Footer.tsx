@@ -29,6 +29,14 @@ export const Footer: React.FC = () => {
            <p className="text-xs text-slate-500">
              © {new Date().getFullYear()} Todos os direitos reservados.
            </p>
+           <a
+             href="https://wa.me/5562985328488"
+             target="_blank"
+             rel="noopener noreferrer"
+             className="mt-2 text-xs text-slate-400 hover:text-teal-300 transition-colors"
+           >
+             Desenvolvido por Agência Jireh · WhatsApp (62) 98532-8488
+           </a>
         </div>
       </div>
     </footer>
