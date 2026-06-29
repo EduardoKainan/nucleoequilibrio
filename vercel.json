@@ -1,4 +1,30 @@
 {
+  "rewrites": [
+    {
+      "source": "/apoio-emocional-especializado",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/orientacao-inicial",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/apoio-para-familiares",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/acolhimento-humanizado",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/unidades-de-atendimento",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/convenios-e-atendimento",
+      "destination": "/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

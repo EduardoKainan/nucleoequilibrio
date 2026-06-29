@@ -3,7 +3,8 @@ import { Quiz } from './components/Quiz';
 import { LiteYouTube } from './components/LiteYouTube';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ShieldCheck, Star } from 'lucide-react';
-import { WHATSAPP_URL } from './constants';
+import { SITELINK_PAGES, WHATSAPP_URL } from './constants';
+import { SitelinkPage } from './components/SitelinkPage';
 
 // Lazy load components not needed for the initial "Presell" view
 const Hero = lazy(() => import('./components/Hero').then(module => ({ default: module.Hero })));
@@ -28,6 +29,8 @@ const LoadingSpinner = () => (
 const App: React.FC = () => {
   // Estado para controlar se o quiz (presell) foi concluído
   const [isQuizCompleted, setIsQuizCompleted] = useState(false);
+  const currentPath = window.location.pathname.replace(/^\/+|\/+$/g, '');
+  const sitelinkPage = SITELINK_PAGES.find((page) => page.slug === currentPath);
 
   // Smooth scroll behavior
   useEffect(() => {
@@ -38,6 +41,10 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
     setIsQuizCompleted(true);
   };
+
+  if (sitelinkPage) {
+    return <SitelinkPage page={sitelinkPage} />;
+  }
 
   // --- TELA 1: PRESELL (QUIZ) ---
   if (!isQuizCompleted) {

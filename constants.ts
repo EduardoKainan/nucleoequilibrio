@@ -1,7 +1,6 @@
 import { Brain, Heart, Activity, Ban, Baby, FileCheck, Ambulance } from 'lucide-react';
 
 export const WHATSAPP_URL = "https://wa.me/message/ZQWUI7BADBR3P1";
-export const SECONDARY_WHATSAPP_URL = "https://wa.me/message/BQ5VB3IPUNMRC1";
 export const PHONE_NUMBER = "556293423326";
 export const PHONE_DISPLAY = "+55 62 9342-3326";
 
@@ -202,5 +201,116 @@ export const LOCATIONS = [
     city: "Unidade VI - Nova Jornada",
     description: "Estrutura completa para acolhimento e acompanhamento, combinando excelência médica com cuidado humano para pacientes e familiares.",
     image: "/assets/images/units/df-6-main.webp"
+  }
+];
+
+export const SITELINK_PAGES = [
+  {
+    slug: "apoio-emocional-especializado",
+    title: "Apoio Emocional Especializado",
+    eyebrow: "Cuidado humano",
+    description: "Orientação profissional para pessoas e famílias que buscam acolhimento, segurança e direcionamento em momentos delicados.",
+    intro: "O primeiro passo é conversar com uma equipe preparada para entender o momento atual, ouvir a família e indicar caminhos de cuidado com sigilo e responsabilidade.",
+    sections: [
+      {
+        title: "Como a orientação é conduzida",
+        text: "A escuta inicial considera rotina, contexto familiar, sinais emocionais e nível de suporte necessário. A partir disso, a equipe explica alternativas adequadas para cada situação."
+      },
+      {
+        title: "Cuidado sem julgamento",
+        text: "A abordagem é acolhedora e centrada na segurança da pessoa atendida. Familiares recebem orientação para agir com mais clareza em momentos de incerteza."
+      }
+    ],
+    highlights: ["Escuta individual", "Equipe multidisciplinar", "Sigilo no atendimento", "Orientação familiar"]
+  },
+  {
+    slug: "orientacao-inicial",
+    title: "Orientação Inicial",
+    eyebrow: "Primeira orientação",
+    description: "Conversa inicial para compreender o cenário, tirar dúvidas e identificar qual tipo de suporte pode ser mais adequado.",
+    intro: "A orientação inicial não substitui consulta médica, mas ajuda a família a organizar informações importantes e entender possíveis caminhos de cuidado.",
+    sections: [
+      {
+        title: "O que é considerado",
+        text: "São observados sinais comportamentais, condições emocionais, rotina, histórico de acompanhamento e rede de apoio disponível."
+      },
+      {
+        title: "Quando buscar orientação",
+        text: "Quando a família percebe isolamento, conflitos recorrentes, mudanças bruscas de comportamento ou dificuldade para decidir o próximo passo."
+      }
+    ],
+    highlights: ["Escuta qualificada", "Triagem responsável", "Encaminhamento adequado", "Atendimento reservado"]
+  },
+  {
+    slug: "apoio-para-familiares",
+    title: "Apoio para Familiares",
+    eyebrow: "Acolhimento familiar",
+    description: "Orientação para familiares que precisam lidar com situações delicadas, crises emocionais e decisões de cuidado.",
+    intro: "A família também precisa de suporte. Muitas vezes, entender como agir, o que evitar e quando buscar ajuda especializada reduz conflitos e melhora a segurança do processo.",
+    sections: [
+      {
+        title: "Orientação prática",
+        text: "A equipe ajuda a família a organizar informações, reconhecer sinais de alerta e conversar sobre alternativas de cuidado com mais segurança."
+      },
+      {
+        title: "Rede de apoio",
+        text: "O suporte familiar é parte importante do acompanhamento. Por isso, a comunicação é conduzida com discrição, respeito e foco no bem-estar."
+      }
+    ],
+    highlights: ["Acolhimento à família", "Conduta orientada", "Comunicação segura", "Suporte em momentos críticos"]
+  },
+  {
+    slug: "acolhimento-humanizado",
+    title: "Acolhimento Humanizado",
+    eyebrow: "Ambiente acompanhado",
+    description: "Estrutura planejada para oferecer rotina, acompanhamento e suporte profissional durante um período de reorganização pessoal.",
+    intro: "O acolhimento pode ser indicado quando a pessoa precisa de um ambiente protegido, com rotina acompanhada e equipe preparada para lidar com demandas emocionais e comportamentais.",
+    sections: [
+      {
+        title: "Rotina com acompanhamento",
+        text: "A rotina pode envolver atividades acompanhadas, convivência assistida, suporte psicológico e presença de profissionais conforme cada caso."
+      },
+      {
+        title: "Respeito ao processo individual",
+        text: "Cada pessoa tem uma trajetória. O acompanhamento é conduzido sem promessas de resultado, com foco em cuidado contínuo e responsabilidade."
+      }
+    ],
+    highlights: ["Ambiente estruturado", "Atividades terapêuticas", "Equipe presente", "Plano individualizado"]
+  },
+  {
+    slug: "unidades-de-atendimento",
+    title: "Unidades de Atendimento",
+    eyebrow: "Goiás e Distrito Federal",
+    description: "Espaços preparados para acolhimento, acompanhamento e suporte profissional em regiões estratégicas.",
+    intro: "As unidades contam com ambientes de convivência, áreas abertas e estrutura para atendimento humanizado, respeitando privacidade e segurança.",
+    sections: [
+      {
+        title: "Estrutura pensada para cuidado",
+        text: "Os espaços foram organizados para favorecer rotina, acolhimento, descanso e atividades acompanhadas por equipe preparada."
+      },
+      {
+        title: "Atendimento regional",
+        text: "Há opções de unidades em Goiás e no Distrito Federal, facilitando o acesso de famílias que buscam orientação e suporte próximo."
+      }
+    ],
+    highlights: ["Goiás", "Distrito Federal", "Ambientes acolhedores", "Privacidade"]
+  },
+  {
+    slug: "convenios-e-atendimento",
+    title: "Convênios e Formas de Atendimento",
+    eyebrow: "Orientação administrativa",
+    description: "Informações sobre possibilidades de atendimento, convênios e formas de contato para avaliação inicial.",
+    intro: "A disponibilidade de cobertura pode variar conforme plano, contrato e tipo de atendimento. A equipe orienta a família sobre os próximos passos de forma clara.",
+    sections: [
+      {
+        title: "Consulta de possibilidade",
+        text: "Antes de qualquer encaminhamento, é importante verificar informações básicas do plano e entender quais alternativas podem ser analisadas."
+      },
+      {
+        title: "Atendimento direto",
+        text: "Também é possível solicitar orientação particular para compreender valores, estrutura, disponibilidade e funcionamento do acolhimento."
+      }
+    ],
+    highlights: ["Planos de saúde", "Atendimento particular", "Orientação inicial", "Contato sigiloso"]
   }
 ];

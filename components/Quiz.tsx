@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   QUIZ_QUESTIONS,
   WHATSAPP_URL,
-  SECONDARY_WHATSAPP_URL,
   PHONE_NUMBER
 } from '../constants';
 import { Loader2, CheckCircle2, MessageCircle, Globe, Phone, FileQuestion, ArrowRight } from 'lucide-react';
@@ -95,15 +94,6 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
                     >
                         <Phone className="w-6 h-6 animate-pulse" />
                         <span className="font-bold">LIGAR URGENTE 24H</span>
-                    </Button>
-
-                    <Button 
-                        href={SECONDARY_WHATSAPP_URL}
-                        target="_blank"
-                        className="w-full py-4 text-lg bg-green-600 hover:bg-green-700 shadow-md flex items-center justify-center gap-3"
-                    >
-                        <MessageCircle className="w-6 h-6" />
-                        <span>Falar no WhatsApp</span>
                     </Button>
 
                     <Button
@@ -203,15 +193,6 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
                 Falar com Terapeuta Online
               </Button>
               
-              <Button 
-                href={SECONDARY_WHATSAPP_URL}
-                target="_blank"
-                className="w-full gap-2 py-4 text-lg shadow-lg"
-              >
-                <MessageCircle size={24} />
-                Segunda Opção de Atendimento
-              </Button>
-
               <Button
                 variant="outline" 
                 onClick={handleSiteClick} 
