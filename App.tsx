@@ -154,7 +154,7 @@ const App: React.FC = () => {
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors font-medium text-sm shadow-lg inline-block"
               >
-                Falar com Especialista
+                Falar agora no WhatsApp
               </a>
             </nav>
           </div>

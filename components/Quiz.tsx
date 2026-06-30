@@ -102,7 +102,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
                         className="w-full py-4 text-lg bg-green-700 hover:bg-green-800 shadow-md flex items-center justify-center gap-3"
                     >
                         <MessageCircle className="w-6 h-6" />
-                        <span>Outro Atendimento no WhatsApp</span>
+                        <span>Falar agora no WhatsApp</span>
                     </Button>
 
                     <Button 
@@ -190,7 +190,7 @@ export const Quiz: React.FC<QuizProps> = ({ onComplete, className = "" }) => {
                 className="w-full gap-2 py-4 text-lg shadow-lg animate-pulse"
               >
                 <MessageCircle size={24} />
-                Falar com Terapeuta Online
+                Atendimento imediato no WhatsApp
               </Button>
               
               <Button

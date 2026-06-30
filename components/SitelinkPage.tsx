@@ -52,7 +52,7 @@ export const SitelinkPage: React.FC<SitelinkPageProps> = ({ page }) => {
               <div className="flex flex-col sm:flex-row gap-3 mt-8">
                 <Button href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="gap-2">
                   <MessageCircle size={20} />
-                  Falar com especialista
+                  Falar agora no WhatsApp
                 </Button>
                 <Button href={`tel:${PHONE_NUMBER}`} variant="outline" className="gap-2">
                   <Phone size={20} />
@@ -107,7 +107,7 @@ export const SitelinkPage: React.FC<SitelinkPageProps> = ({ page }) => {
               </div>
               <Button href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" variant="secondary" className="gap-2 shrink-0">
                 <MessageCircle size={20} />
-                Atendimento sigiloso
+                Atendimento imediato no WhatsApp
               </Button>
             </div>
           </div>

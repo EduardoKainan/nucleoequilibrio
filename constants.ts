@@ -15,7 +15,7 @@ export const NAV_LINKS = [
 export const HERO_CONTENT = {
   headline: "O Cuidado Certo para Saúde Mental e Equilíbrio Emocional",
   subheadline: "Ajudamos pessoas e famílias a retomarem o equilíbrio, a dignidade e a qualidade de vida por meio de um acompanhamento humano, seguro e especializado.",
-  cta: "Fale agora com um especialista",
+  cta: "Falar agora no WhatsApp",
   ctaPhone: "Ligue Agora"
 };
 
