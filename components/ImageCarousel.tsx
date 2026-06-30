@@ -27,28 +27,26 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ className = "", im
     return <div className={`bg-slate-200 flex items-center justify-center text-slate-400 ${className}`}>Sem imagens</div>;
   }
 
+  const currentImage = displayImages[currentIndex];
+  const responsiveSrcSet = currentImage.includes('.webp')
+    ? `${currentImage.replace('.webp', '-640w.webp')} 640w, ${currentImage.replace('.webp', '-960w.webp')} 960w, ${currentImage.replace('.webp', '-1280w.webp')} 1280w`
+    : undefined;
+
   return (
     <div className={`relative w-full overflow-hidden shadow-lg bg-slate-200 ${className || 'h-64 md:h-80 rounded-2xl'}`}>
-      {displayImages.map((image, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <img
-            src={image}
-            srcSet={image.includes('.webp') ? `${image.replace('.webp', '-640w.webp')} 640w, ${image.replace('.webp', '-960w.webp')} 960w, ${image.replace('.webp', '-1280w.webp')} 1280w` : undefined}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            alt={`Estrutura da Unidade ${index + 1}`}
-            className="w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
-          />
-          {/* Overlay gradiente para melhorar leitura de textos se necessário, ou apenas estética */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-        </div>
-      ))}
+      <div className="absolute inset-0">
+        <img
+          key={currentImage}
+          src={currentImage}
+          srcSet={responsiveSrcSet}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          alt={`Estrutura da Unidade ${currentIndex + 1}`}
+          className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+      </div>
       
       {/* Indicadores (Dots) - Só mostra se tiver mais de 1 imagem */}
       {displayImages.length > 1 && (

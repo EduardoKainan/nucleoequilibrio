@@ -11,6 +11,7 @@ export const InsuranceLogos: React.FC<InsuranceLogosProps> = ({ className = "", 
   // Se o variant for dark, os logos precisam estar dentro de uma caixa branca ou ter filtro. 
   // Como são logos coloridos, em fundo escuro (teal), é melhor usar um container branco translúcido ou apenas branco.
   // Vamos simplificar: este componente renderiza os logos. O background é controlado pelo className do pai.
+  const logosLoop = [...INSURANCE_LOGOS, ...INSURANCE_LOGOS];
   
   return (
     <div className={`w-full overflow-hidden py-6 ${className}`}>
@@ -23,8 +24,7 @@ export const InsuranceLogos: React.FC<InsuranceLogosProps> = ({ className = "", 
       )}
       <div className="relative w-full flex overflow-hidden mask-linear-fade">
          <div className="animate-marquee flex items-center gap-16 pr-16">
-             {/* Repetindo 4x para garantir loop infinito suave em telas grandes */}
-             {[...INSURANCE_LOGOS, ...INSURANCE_LOGOS, ...INSURANCE_LOGOS, ...INSURANCE_LOGOS].map((logo, index) => (
+             {logosLoop.map((logo, index) => (
                 <div key={index} className="flex-shrink-0 bg-white/10 p-2 rounded-lg backdrop-blur-sm">
                     <img 
                       src={logo} 

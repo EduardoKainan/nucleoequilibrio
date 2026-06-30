@@ -1,33 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M9BPSKNJ');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apoio Especializado e Orientação Humana</title>
     <meta name="description" content="Acompanhamento humano e profissional para quem busca orientação, acolhimento e novos caminhos em Goiás e Distrito Federal.">
-    
-    <!-- Preload LCP Image -->
-    <link rel="preload" as="image" href="https://i.ytimg.com/vi/0k3Whno19Z4/hqdefault.jpg" fetchpriority="high">
-    
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    </noscript>
+    <link rel="preload" as="image" href="/assets/images/hero-bg-640w.webp" fetchpriority="high">
     
     <style>
+      :root {
+        --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: var(--font-sans);
       }
     </style>
 </head>
@@ -38,7 +23,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <div id="root">
       <!-- Skeleton for LCP to improve Element Render Delay -->
-      <div style="min-height: 100vh; background-color: #f8fafc; display: flex; flex-direction: column; font-family: 'Inter', sans-serif;">
+      <div style="min-height: 100vh; background-color: #f8fafc; display: flex; flex-direction: column; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
         <header style="width: 100%; padding: 1rem 0; text-align: center; background-color: #fff; border-bottom: 1px solid #f1f5f9;">
           <div style="font-weight: 700; font-size: 1.5rem; color: #1e293b; letter-spacing: -0.025em;">
             Núcleo<span style="color: #0d9488;">Equilíbrio</span>
@@ -61,7 +46,7 @@
                   Tome uma decisão hoje e ofereça apoio seguro, humano e imediato. Sua ação pode salvar uma vida.
                 </p>
                 <div style="position: relative; width: 100%; height: 250px; border-radius: 1rem; overflow: hidden; background-color: #000; border: 1px solid #e2e8f0; margin-top: 1rem;">
-                  <img src="https://i.ytimg.com/vi/0k3Whno19Z4/hqdefault.jpg" alt="Apresentação da Unidade" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" fetchpriority="high">
+                  <img src="/assets/images/hero-bg-640w.webp" alt="Apresentação da Unidade" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" fetchpriority="high">
                 </div>
               </div>
             </div>
@@ -69,6 +54,26 @@
         </main>
       </div>
     </div>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'gtm.init' });
+      function loadGTM() {
+        if (window.__gtmLoaded) return;
+        window.__gtmLoaded = true;
+        window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-M9BPSKNJ';
+        document.head.appendChild(script);
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGTM, { timeout: 2500 });
+      } else {
+        window.addEventListener('load', function () {
+          setTimeout(loadGTM, 1200);
+        }, { once: true });
+      }
+    </script>
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>

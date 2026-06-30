@@ -10,9 +10,7 @@ interface LiteYouTubeProps {
 export const LiteYouTube: React.FC<LiteYouTubeProps> = ({ videoId, title, className = '', priority = false }) => {
   const [isIframeLoaded, setIsIframeLoaded] = useState(false);
 
-  // Using hqdefault.jpg as it's standard and usually available. 
-  // maxresdefault might not exist for all videos.
-  const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+  const thumbnailUrl = '/assets/images/hero-bg-640w.webp';
 
   return (
     <div 

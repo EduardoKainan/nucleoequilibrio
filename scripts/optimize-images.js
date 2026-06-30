@@ -77,6 +77,12 @@ async function processImages() {
   
   for (const img of imagesToProcess) {
     try {
+      const outputPath = path.join(outputDir, img.output);
+      if (!process.env.FORCE_IMAGE_OPTIMIZE && fs.existsSync(outputPath)) {
+        console.log(`Skipping ${img.output}, already exists.`);
+        continue;
+      }
+
       console.log(`Processing ${img.output}...`);
       const buffer = await downloadImage(img.url);
       
