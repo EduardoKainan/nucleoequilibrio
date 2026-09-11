@@ -33,8 +33,9 @@ const App: React.FC = () => {
 
       <header className="absolute top-10 w-full z-50 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <a href="#hero" className="font-bold text-2xl text-white drop-shadow-md tracking-tight" aria-label="Núcleo Equilíbrio - início">
-            Núcleo<span className="text-teal-300">Equilíbrio</span>
+          <a href="#hero" className="flex items-center gap-2 font-bold text-2xl text-white drop-shadow-md tracking-tight" aria-label="Núcleo Equilíbrio - início">
+            <img src="/assets/images/logo-nucleo-equilibrio.webp" alt="" className="w-10 h-10 object-contain" />
+            <span>Núcleo<span className="text-teal-300">Equilíbrio</span></span>
           </a>
           <nav className="hidden md:flex items-center gap-7" aria-label="Navegação principal">
             <a href="#como-podemos-ajudar" className="text-slate-200 hover:text-white font-medium transition-colors">Como podemos ajudar</a>

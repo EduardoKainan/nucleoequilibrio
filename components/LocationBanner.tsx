@@ -57,12 +57,14 @@ export const LocationBanner: React.FC = () => {
   if (state === 'hidden') return null;
 
   const localized = state === 'localized';
-  const city = location?.city ? ` em ${location.city}` : '';
+  const city = location?.country_code === 'BR' ? location.city || '' : '';
   const message = state === 'loading'
     ? 'Verificando a região de atendimento...'
     : localized
-      ? `Temos atendimento${city} e em outras cidades de Goiás, do Distrito Federal e de Minas Gerais.`
-      : 'Atendemos Goiás, Distrito Federal e Minas Gerais. Consulte a equipe sobre a melhor opção para sua região.';
+      ? `Atendimento disponível em ${city}.`
+      : city
+        ? `Atendimento consultivo para ${city}. Consulte a equipe.`
+        : 'Atendimento regional disponível. Consulte a equipe.';
 
   return (
     <div className="relative z-[60] bg-teal-950 text-white border-b border-teal-800/80">

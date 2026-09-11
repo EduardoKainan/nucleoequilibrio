@@ -12,7 +12,7 @@ export const Locations: React.FC = () => {
             Nossas Unidades
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-slate-500">
-            Estamos presentes em Goiás e no Distrito Federal, com estruturas preparadas para acolher cada pessoa de forma individual e respeitosa.
+            Estamos presentes em Goiás e no Distrito Federal e também atendemos famílias de Minas Gerais, com orientação sobre a melhor opção para cada região.
           </p>
         </div>
 
