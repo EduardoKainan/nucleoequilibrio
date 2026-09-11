@@ -17,10 +17,10 @@ export const Testimonials: React.FC = () => {
             <MessageSquareQuote className="w-8 h-8 text-teal-600" />
           </div>
           <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl mb-4">
-            Palavras de quem reencontrou a paz
+            Relatos sobre o nosso atendimento
           </h2>
           <p className="max-w-2xl mx-auto text-xl text-slate-600">
-            Acreditamos que cada história de superação é única. Veja o que famílias e pacientes dizem sobre o impacto do nosso acolhimento.
+            Cada experiência é individual. Confira alguns relatos compartilhados por famílias sobre a forma como foram recebidas e orientadas.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export const Testimonials: React.FC = () => {
               <div className="aspect-[4/5] w-full overflow-hidden bg-slate-100">
                 <img 
                     src={imageUrl} 
-                    alt={`Depoimento de cliente ${index + 1}`} 
+                    alt={`Relato de atendimento ${index + 1}`}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                     decoding="async"

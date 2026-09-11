@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 export const Features: React.FC = () => {
   return (
-    <div id="tratamentos" className="py-16 bg-white overflow-hidden lg:py-24">
+    <div className="py-16 bg-white overflow-hidden lg:py-24">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Seção Introdutória - Cuidar de Quem Você Ama */}
@@ -39,8 +39,8 @@ export const Features: React.FC = () => {
 
         <div className="relative">
           <div className="text-center mb-12">
-             <h2 className="text-3xl font-extrabold text-slate-900">Tratamentos e Internações</h2>
-             <p className="mt-4 text-xl text-slate-500">Protocolos eficazes e acompanhamento contínuo.</p>
+             <h2 className="text-3xl font-extrabold text-slate-900">Formas de apoio e acompanhamento</h2>
+             <p className="mt-4 text-xl text-slate-500">Caminhos de cuidado pensados para cada história.</p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

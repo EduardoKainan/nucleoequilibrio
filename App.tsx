@@ -1,180 +1,79 @@
-import React, { useEffect, useState, Suspense, lazy } from 'react';
-import { Quiz } from './components/Quiz';
-import { LiteYouTube } from './components/LiteYouTube';
+import React, { lazy, Suspense, useEffect } from 'react';
+import { MessageCircle, ShieldCheck } from 'lucide-react';
+import { Hero } from './components/Hero';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
-import { ShieldCheck, Star } from 'lucide-react';
-import { SITELINK_PAGES, WHATSAPP_URL } from './constants';
-import { SitelinkPage } from './components/SitelinkPage';
+import { LocationBanner } from './components/LocationBanner';
+import { WHATSAPP_URL } from './constants';
 
-// Lazy load components not needed for the initial "Presell" view
-const Hero = lazy(() => import('./components/Hero').then(module => ({ default: module.Hero })));
-const Stats = lazy(() => import('./components/Stats').then(module => ({ default: module.Stats })));
-const Features = lazy(() => import('./components/Features').then(module => ({ default: module.Features })));
-const Locations = lazy(() => import('./components/Locations').then(module => ({ default: module.Locations })));
-const Insurance = lazy(() => import('./components/Insurance').then(module => ({ default: module.Insurance })));
-const Footer = lazy(() => import('./components/Footer').then(module => ({ default: module.Footer })));
-const StructureGallery = lazy(() => import('./components/StructureGallery').then(module => ({ default: module.StructureGallery })));
+const Stats = lazy(() => import('./components/Stats').then((module) => ({ default: module.Stats })));
+const Features = lazy(() => import('./components/Features').then((module) => ({ default: module.Features })));
+const Testimonials = lazy(() => import('./components/Testimonials').then((module) => ({ default: module.Testimonials })));
+const StructureGallery = lazy(() => import('./components/StructureGallery').then((module) => ({ default: module.StructureGallery })));
+const Insurance = lazy(() => import('./components/Insurance').then((module) => ({ default: module.Insurance })));
+const Locations = lazy(() => import('./components/Locations').then((module) => ({ default: module.Locations })));
+const Footer = lazy(() => import('./components/Footer').then((module) => ({ default: module.Footer })));
 
-// Lazy load below-the-fold components for Presell view
-const Testimonials = lazy(() => import('./components/Testimonials').then(module => ({ default: module.Testimonials })));
-const PresellLocations = lazy(() => import('./components/PresellLocations').then(module => ({ default: module.PresellLocations })));
-const InsuranceLogos = lazy(() => import('./components/InsuranceLogos').then(module => ({ default: module.InsuranceLogos })));
-
-const LoadingSpinner = () => (
-  <div className="min-h-screen flex items-center justify-center bg-slate-50">
-    <div className="w-12 h-12 border-4 border-teal-600 border-t-transparent rounded-full animate-spin"></div>
+const LoadingSection = () => (
+  <div className="h-24 flex items-center justify-center" aria-hidden="true">
+    <div className="w-7 h-7 border-4 border-teal-600 border-t-transparent rounded-full animate-spin" />
   </div>
 );
 
 const App: React.FC = () => {
-  // Estado para controlar se o quiz (presell) foi concluído
-  const [isQuizCompleted, setIsQuizCompleted] = useState(false);
-  const currentPath = window.location.pathname.replace(/^\/+|\/+$/g, '');
-  const sitelinkPage = SITELINK_PAGES.find((page) => page.slug === currentPath);
-
-  // Smooth scroll behavior
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
+    return () => {
+      document.documentElement.style.scrollBehavior = '';
+    };
   }, []);
 
-  const handleQuizCompletion = () => {
-    window.scrollTo(0, 0);
-    setIsQuizCompleted(true);
-  };
-
-  if (sitelinkPage) {
-    return <SitelinkPage page={sitelinkPage} />;
-  }
-
-  // --- TELA 1: PRESELL (QUIZ) ---
-  if (!isQuizCompleted) {
-    return (
-      <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-        {/* Header Simples Presell - Padding reduzido no mobile */}
-        <header className="w-full py-4 lg:py-6 text-center bg-white border-b border-slate-100">
-           <div className="font-bold text-2xl text-slate-800 tracking-tight">
-              Núcleo<span className="text-teal-600">Equilíbrio</span>
-           </div>
-        </header>
-
-        <main className="flex-grow flex flex-col py-6 lg:py-8 px-4 bg-gradient-to-b from-white to-slate-100">
-          <div className="max-w-6xl mx-auto w-full">
-            
-            {/* Grid principal - gap reduzido no mobile */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start mb-12 lg:mb-16">
-              
-              {/* Coluna da Esquerda (Desktop) / Cima (Mobile): Contexto Visual + Headline */}
-              <div className="fade-in flex flex-col gap-4 lg:gap-6">
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="flex text-yellow-400">
-                      {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-                    </div>
-                    <span className="text-sm font-medium text-slate-600">+500 famílias atendidas</span>
-                  </div>
-                  <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-2">
-                    Cada Dia Sem Tratamento É Um Risco.
-                  </h1>
-                  <p className="text-lg text-slate-600">
-                    Tome uma decisão hoje e ofereça apoio seguro, humano e imediato. Sua ação pode salvar uma vida.
-                  </p>
-                </div>
-                
-                {/* Vídeo do YouTube Otimizado */}
-                <div className="relative w-full h-[250px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl bg-black border border-slate-200">
-                  <LiteYouTube 
-                    videoId="0k3Whno19Z4"
-                    title="Apresentação da Unidade"
-                    className="w-full h-full"
-                    priority={true}
-                  />
-                </div>
-                
-                <div className="flex items-center gap-2 text-sm text-slate-500 bg-white p-3 rounded-lg border border-slate-100 shadow-sm">
-                  <ShieldCheck className="text-teal-600" size={20} />
-                  <span>Garantia de sigilo absoluto e atendimento 24 horas.</span>
-                </div>
-              </div>
-
-              {/* Coluna da Direita (Desktop) / Baixo (Mobile): Quiz (Ação) */}
-              <div className="flex flex-col items-center lg:items-end fade-in lg:sticky lg:top-8">
-                 <div className="w-full max-w-lg">
-                    {/* Seção de texto removida conforme solicitado */}
-                    
-                    <Quiz onComplete={handleQuizCompletion} className="shadow-2xl border border-teal-100/50" />
-                    
-                    <p className="mt-4 lg:mt-6 text-xs text-slate-400 text-center max-w-md mx-auto">
-                      Este é um espaço seguro. Ao continuar, você terá acesso às nossas soluções especializadas.
-                    </p>
-                 </div>
-              </div>
-            </div>
-
-            {/* Seção de Depoimentos na Presell (Antes das fotos) */}
-            <Suspense fallback={<div className="h-40 flex items-center justify-center"><div className="w-8 h-8 border-4 border-teal-600 border-t-transparent rounded-full animate-spin"></div></div>}>
-              <div className="fade-in border-t border-slate-200 pt-10 lg:pt-12">
-                 <Testimonials />
-              </div>
-
-              {/* Seção Separada para Imagens das Unidades - AGORA USANDO PresellLocations */}
-              <div className="fade-in pt-10 lg:pt-12 mb-8 border-t border-slate-200">
-                  <PresellLocations />
-              </div>
-              
-              {/* Seção de Convênios na Presell */}
-              <div className="fade-in pt-8 border-t border-slate-200">
-                 <InsuranceLogos title="Atendemos os principais planos" />
-              </div>
-            </Suspense>
-
-          </div>
-        </main>
-        <FloatingWhatsApp />
-      </div>
-    );
-  }
-
-  // --- TELA 2: LANDING PAGE COMPLETA ---
   return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <div className="min-h-screen flex flex-col font-sans fade-in">
-        {/* Navbar Landing Page */}
-        <header className="absolute top-0 w-full z-50 bg-transparent">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div className="font-bold text-2xl text-slate-100 drop-shadow-md tracking-tight">
-              Núcleo<span className="text-teal-400">Equilíbrio</span>
-            </div>
-            <nav className="hidden md:flex gap-8">
-              <a href="#tratamentos" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Tratamentos</a>
-              <a href="#convenios" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Convênios</a>
-              <a href="#unidades" className="text-slate-200 hover:text-white font-medium transition-colors shadow-sm">Unidades</a>
-              <a 
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors font-medium text-sm shadow-lg inline-block"
-              >
-                Falar agora no WhatsApp
-              </a>
-            </nav>
-          </div>
-        </header>
+    <div className="min-h-screen flex flex-col font-sans bg-slate-50 text-slate-800">
+      <LocationBanner />
 
-        <main className="flex-grow">
-          <Hero />
+      <header className="absolute top-10 w-full z-50 bg-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          <a href="#hero" className="font-bold text-2xl text-white drop-shadow-md tracking-tight" aria-label="Núcleo Equilíbrio - início">
+            Núcleo<span className="text-teal-300">Equilíbrio</span>
+          </a>
+          <nav className="hidden md:flex items-center gap-7" aria-label="Navegação principal">
+            <a href="#como-podemos-ajudar" className="text-slate-200 hover:text-white font-medium transition-colors">Como podemos ajudar</a>
+            <a href="#unidades" className="text-slate-200 hover:text-white font-medium transition-colors">Unidades</a>
+            <a href="#convenios" className="text-slate-200 hover:text-white font-medium transition-colors">Convênios</a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors font-medium text-sm shadow-lg inline-flex items-center gap-2">
+              <MessageCircle size={17} /> Falar no WhatsApp
+            </a>
+          </nav>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="md:hidden inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-teal-600 text-white text-sm font-semibold shadow-lg">
+            <MessageCircle size={17} /> WhatsApp
+          </a>
+        </div>
+      </header>
+
+      <main className="flex-grow">
+        <Hero />
+
+        <section className="bg-white border-b border-slate-100" aria-label="Resumo do atendimento">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left">
+            <div className="flex items-center justify-center sm:justify-start gap-3"><ShieldCheck className="text-teal-600" size={22} /><span className="text-sm font-semibold text-slate-700">Atendimento reservado</span></div>
+            <div className="flex items-center justify-center sm:justify-start gap-3"><ShieldCheck className="text-teal-600" size={22} /><span className="text-sm font-semibold text-slate-700">Orientação individualizada</span></div>
+            <div className="flex items-center justify-center sm:justify-start gap-3"><ShieldCheck className="text-teal-600" size={22} /><span className="text-sm font-semibold text-slate-700">Equipe preparada</span></div>
+          </div>
+        </section>
+
+        <Suspense fallback={<LoadingSection />}>
           <Stats />
-          <Features />
-          {/* Depoimentos inseridos antes da galeria de estrutura */}
+          <div id="como-podemos-ajudar"><Features /></div>
           <Testimonials />
           <StructureGallery />
           <Insurance />
           <Locations />
-        </main>
+        </Suspense>
+      </main>
 
-        <Footer />
-        <FloatingWhatsApp />
-      </div>
-    </Suspense>
+      <Suspense fallback={null}><Footer /></Suspense>
+      <FloatingWhatsApp />
+    </div>
   );
 };
 

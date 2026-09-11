@@ -11,11 +11,6 @@ export interface FeatureItem {
   description: string;
 }
 
-export interface QuizQuestion {
-  id: number;
-  question: string;
-  options: string[];
-}
 
 export interface LocationItem {
   region: string;

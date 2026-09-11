@@ -3,57 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apoio Especializado e Orientação Humana</title>
-    <meta name="description" content="Acompanhamento humano e profissional para quem busca orientação, acolhimento e novos caminhos em Goiás e Distrito Federal.">
-    <link rel="preload" as="image" href="/assets/images/hero-bg-640w.webp" fetchpriority="high">
-    
+    <title>Núcleo Equilíbrio | Apoio e Orientação Especializada</title>
+    <meta name="description" content="Apoio, acolhimento e orientação especializada para pessoas e famílias. Atendimento reservado em Goiás, Distrito Federal e região." />
+    <link rel="preload" as="image" href="/assets/images/hero-bg-1280w.webp" fetchpriority="high" />
     <style>
-      :root {
-        --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      }
-      body {
-        font-family: var(--font-sans);
-      }
+      :root { --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      body { font-family: var(--font-sans); }
     </style>
-</head>
+  </head>
   <body class="bg-slate-50 text-slate-800 antialiased">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9BPSKNJ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div id="root">
-      <!-- Skeleton for LCP to improve Element Render Delay -->
-      <div style="min-height: 100vh; background-color: #f8fafc; display: flex; flex-direction: column; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-        <header style="width: 100%; padding: 1rem 0; text-align: center; background-color: #fff; border-bottom: 1px solid #f1f5f9;">
-          <div style="font-weight: 700; font-size: 1.5rem; color: #1e293b; letter-spacing: -0.025em;">
-            Núcleo<span style="color: #0d9488;">Equilíbrio</span>
-          </div>
-        </header>
-        <main style="flex-grow: 1; display: flex; flex-direction: column; padding: 1.5rem 1rem; background: linear-gradient(to bottom, #fff, #f1f5f9);">
-          <div style="max-width: 72rem; margin: 0 auto; width: 100%;">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem;">
-              <div style="display: flex; flex-direction: column; gap: 1rem;">
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-                  <div style="display: flex; color: #facc15;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  </div>
-                  <span style="font-size: 0.875rem; font-weight: 500; color: #475569;">+500 famílias atendidas</span>
-                </div>
-                <h1 style="font-size: 1.875rem; font-weight: 800; color: #0f172a; line-height: 1.25; margin-bottom: 0.5rem;">
-                  Cada Dia Sem Tratamento É Um Risco.
-                </h1>
-                <p style="font-size: 1.125rem; color: #475569;">
-                  Tome uma decisão hoje e ofereça apoio seguro, humano e imediato. Sua ação pode salvar uma vida.
-                </p>
-                <div style="position: relative; width: 100%; height: 250px; border-radius: 1rem; overflow: hidden; background-color: #000; border: 1px solid #e2e8f0; margin-top: 1rem;">
-                  <img src="/assets/images/hero-bg-640w.webp" alt="Apresentação da Unidade" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" fetchpriority="high">
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-    </div>
+    <noscript>Este site precisa de JavaScript para funcionar corretamente.</noscript>
+    <div id="root"></div>
     <script>
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'gtm.init' });
@@ -66,13 +26,8 @@
         script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-M9BPSKNJ';
         document.head.appendChild(script);
       }
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadGTM, { timeout: 2500 });
-      } else {
-        window.addEventListener('load', function () {
-          setTimeout(loadGTM, 1200);
-        }, { once: true });
-      }
+      if ('requestIdleCallback' in window) requestIdleCallback(loadGTM, { timeout: 2500 });
+      else window.addEventListener('load', function () { setTimeout(loadGTM, 1200); }, { once: true });
     </script>
     <script type="module" src="/index.tsx"></script>
   </body>

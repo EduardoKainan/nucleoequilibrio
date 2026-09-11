@@ -17,7 +17,7 @@ export const Insurance: React.FC = () => {
                   Convênios e Planos de Saúde
                 </h2>
                 <p className="text-lg text-teal-100 mb-6 lg:mb-0">
-                  Trabalhamos com os principais planos de saúde do Brasil, facilitando o acesso ao tratamento adequado para você ou seu familiar.
+                  Trabalhamos com diferentes formas de atendimento. Fale com a equipe para confirmar disponibilidade, cobertura e o caminho mais adequado para o seu caso.
                 </p>
              </div>
              <div className="lg:w-1/3 flex justify-center lg:justify-end">

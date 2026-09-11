@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
         <div className="text-center md:text-left">
           <h3 className="text-white text-lg font-bold mb-2">Núcleo de Apoio e Equilíbrio</h3>
           <p className="text-sm max-w-xs">
-            Dedicados a reconstruir histórias e promover o bem-estar integral em Goiás e DF.
+            Acolhimento, orientação e acompanhamento responsável para pessoas e famílias em Goiás, no Distrito Federal, em Minas Gerais e região.
           </p>
           <a
             href={`tel:${PHONE_NUMBER}`}
@@ -29,14 +29,7 @@ export const Footer: React.FC = () => {
            <p className="text-xs text-slate-500">
              © {new Date().getFullYear()} Todos os direitos reservados.
            </p>
-           <a
-             href="https://wa.me/5562985328488"
-             target="_blank"
-             rel="noopener noreferrer"
-             className="mt-2 text-xs text-slate-400 hover:text-teal-300 transition-colors"
-           >
-             Desenvolvido por Agência Jireh · WhatsApp (62) 98532-8488
-           </a>
+           <p className="mt-2 text-xs text-slate-500">Desenvolvido por Agência Jireh</p>
         </div>
       </div>
     </footer>

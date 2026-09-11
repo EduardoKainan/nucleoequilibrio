@@ -1,27 +1,27 @@
 import { Brain, Heart, Activity, Ban, Baby, FileCheck, Ambulance } from 'lucide-react';
 
-export const WHATSAPP_URL = "https://wa.me/message/ZQWUI7BADBR3P1";
-export const PHONE_NUMBER = "556293423326";
-export const PHONE_DISPLAY = "+55 62 9342-3326";
+export const WHATSAPP_URL = "https://wa.me/message/I356RT7T5OLQG1";
+export const PHONE_NUMBER = "553897397138";
+export const PHONE_DISPLAY = "+55 38 9739-7138";
 
 export const NAV_LINKS = [
   { label: 'Início', href: '#hero' },
-  { label: 'Tratamentos', href: '#tratamentos' },
+  { label: 'Como podemos ajudar', href: '#como-podemos-ajudar' },
   { label: 'Depoimentos', href: '#depoimentos' },
   { label: 'Convênios', href: '#convenios' },
   { label: 'Unidades', href: '#unidades' },
 ];
 
 export const HERO_CONTENT = {
-  headline: "O Cuidado Certo para Saúde Mental e Equilíbrio Emocional",
-  subheadline: "Ajudamos pessoas e famílias a retomarem o equilíbrio, a dignidade e a qualidade de vida por meio de um acompanhamento humano, seguro e especializado.",
-  cta: "Falar agora no WhatsApp",
-  ctaPhone: "Ligue Agora"
+  headline: "Apoio especializado para momentos que exigem cuidado",
+  subheadline: "Converse com uma equipe preparada para acolher pessoas e famílias com respeito, sigilo e orientação responsável.",
+  cta: "Conversar com um especialista",
+  ctaPhone: "Ligar agora"
 };
 
 export const INTRO_CONTENT = {
-  title: "Cuidar de Quem Você Ama Exige Responsabilidade e Profissionalismo",
-  text: "Sabemos que lidar com transtornos emocionais, crises de ansiedade ou depressão é uma das decisões mais difíceis para uma família. Por isso, oferecemos acolhimento, orientação e tratamento individualizado, respeitando cada história e cada momento. Nossa equipe é formada por profissionais experientes e qualificados, preparados para conduzir o tratamento com ética, sigilo e responsabilidade."
+  title: "Cuidado responsável começa com uma conversa segura",
+  text: "Cada história merece ser ouvida com respeito. O Núcleo Equilíbrio oferece acolhimento, orientação e acompanhamento individualizado para pessoas e famílias que precisam organizar o próximo passo com mais clareza e segurança."
 };
 
 export const INSURANCE_LOGOS = [
@@ -106,61 +106,47 @@ export const TESTIMONIALS = [
 ];
 
 export const STATS = [
-  { label: "Pacientes acolhidos", value: "+500" },
+  { label: "Famílias orientadas", value: "+500" },
   { label: "Anos de experiência", value: "+10" },
-  { label: "Profissionais especializados", value: "+15" },
-  { label: "Atendimento", value: "24h" },
+  { label: "Profissionais preparados", value: "+15" },
+  { label: "Atendimento reservado", value: "24h" },
 ];
 
 export const FEATURES = [
   {
     icon: Activity,
-    title: "Transtornos Comportamentais",
-    description: "Cada pessoa manifesta sintomas e desafios diferentes. Nosso tratamento é individualizado e conduzido por equipe multidisciplinar."
+    title: "Acompanhamento individual",
+    description: "Cada pessoa vive um contexto diferente. A equipe organiza a orientação de acordo com a história, a rotina e as necessidades apresentadas."
   },
   {
     icon: Ban,
-    title: "Esgotamento e Burnout",
-    description: "O tratamento inclui acompanhamento terapêutico intensivo, repouso assistido e suporte contínuo à família."
+    title: "Equilíbrio emocional",
+    description: "Suporte para momentos de sobrecarga, mudanças importantes e desafios emocionais, com escuta qualificada e acompanhamento responsável."
   },
   {
     icon: Heart,
-    title: "Acolhimento Feminino",
-    description: "Ambiente acolhedor e seguro, respeitando as particularidades emocionais, sociais e físicas da mulher."
+    title: "Cuidado para mulheres",
+    description: "Ambiente acolhedor e reservado, respeitando as particularidades emocionais, sociais e físicas de cada mulher."
   },
   {
     icon: Baby,
-    title: "Apoio para Menores",
-    description: "Atendimento especializado para adolescentes, com foco no desenvolvimento saudável e apoio familiar."
+    title: "Apoio para adolescentes",
+    description: "Orientação adequada à fase de desenvolvimento, com participação responsável da família e atenção ao bem-estar."
   },
   {
     icon: Brain,
-    title: "Saúde Mental",
-    description: "Tratamentos voltados para ansiedade, depressão, estresse emocional e outros transtornos, com abordagem humanizada."
+    title: "Saúde emocional",
+    description: "Acolhimento para ansiedade, tristeza persistente, estresse e outros desafios emocionais, sem julgamentos e sem promessas de resultado."
   },
   {
     icon: FileCheck,
-    title: "Acolhimento Terapêutico",
-    description: "Indicado quando a pessoa reconhece a necessidade de um afastamento temporário para focar em sua saúde emocional."
+    title: "Rotina acompanhada",
+    description: "Quando necessário, uma rotina estruturada e acompanhada pode ajudar a pessoa a reorganizar hábitos e retomar o cuidado consigo."
   },
   {
     icon: Ambulance,
-    title: "Apoio Familiar Intensivo",
-    description: "Quando a família precisa de intervenção profissional para proteger o bem-estar do ente querido, com total respaldo médico e psicológico."
-  }
-];
-
-// Perguntas de Consciência (Funil Simplificado)
-export const QUIZ_QUESTIONS = [
-  {
-    id: 1,
-    question: "Você busca orientação para quem?",
-    options: [
-      "Para mim",
-      "Para um familiar próximo",
-      "Para alguém sob minha responsabilidade",
-      "Prefiro não informar agora"
-    ]
+    title: "Orientação para familiares",
+    description: "A família recebe direcionamento para compreender o momento, melhorar a comunicação e tomar decisões de cuidado com mais segurança."
   }
 ];
 
@@ -280,9 +266,9 @@ export const SITELINK_PAGES = [
   {
     slug: "unidades-de-atendimento",
     title: "Unidades de Atendimento",
-    eyebrow: "Goiás e Distrito Federal",
+    eyebrow: "Goiás, Distrito Federal e Minas Gerais",
     description: "Espaços preparados para acolhimento, acompanhamento e suporte profissional em regiões estratégicas.",
-    intro: "As unidades contam com ambientes de convivência, áreas abertas e estrutura para atendimento humanizado, respeitando privacidade e segurança.",
+    intro: "As unidades contam com ambientes de convivência, áreas abertas e estrutura para atendimento humanizado, respeitando privacidade e segurança. Também orientamos famílias de Minas Gerais sobre as opções de atendimento disponíveis.",
     sections: [
       {
         title: "Estrutura pensada para cuidado",
@@ -290,10 +276,10 @@ export const SITELINK_PAGES = [
       },
       {
         title: "Atendimento regional",
-        text: "Há opções de unidades em Goiás e no Distrito Federal, facilitando o acesso de famílias que buscam orientação e suporte próximo."
+        text: "Há opções de unidades em Goiás e no Distrito Federal, além de atendimento para famílias de Minas Gerais. A equipe orienta sobre a melhor alternativa para cada região."
       }
     ],
-    highlights: ["Goiás", "Distrito Federal", "Ambientes acolhedores", "Privacidade"]
+    highlights: ["Goiás", "Distrito Federal", "Minas Gerais", "Privacidade"]
   },
   {
     slug: "convenios-e-atendimento",
