@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // Garante que os caminhos funcionem na hospedagem compartilhada
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
