@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useEffect } from 'react';
 import { MessageCircle, ShieldCheck } from 'lucide-react';
 import { Hero } from './components/Hero';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { Blog } from './components/Blog';
 import { LocationBanner } from './components/LocationBanner';
 import { WHATSAPP_URL } from './constants';
 
@@ -28,6 +29,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
+    window.location.pathname.startsWith('/blog') ? <Blog /> : (
     <div className="min-h-screen flex flex-col font-sans bg-slate-50 text-slate-800">
       <LocationBanner />
 
@@ -75,6 +77,7 @@ const App: React.FC = () => {
       <Suspense fallback={null}><Footer /></Suspense>
       <FloatingWhatsApp />
     </div>
+    )
   );
 };
 
