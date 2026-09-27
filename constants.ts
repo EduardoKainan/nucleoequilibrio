@@ -13,8 +13,8 @@ export const NAV_LINKS = [
 ];
 
 export const HERO_CONTENT = {
-  headline: "Apoio especializado para momentos que exigem cuidado",
-  subheadline: "Converse com uma equipe preparada para acolher pessoas e famílias com respeito, sigilo e orientação responsável.",
+  headline: "A família não precisa enfrentar tudo sem orientação.",
+  subheadline: "Conheça opções de atendimento particular em unidades parceiras, com profissionais experientes e possibilidades de cuidado intensivo. Converse com a equipe para entender a estrutura, a disponibilidade e os próximos passos para cada contexto.",
   cta: "Conversar com um especialista",
   ctaPhone: "Ligar agora"
 };

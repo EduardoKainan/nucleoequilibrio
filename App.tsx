@@ -65,8 +65,8 @@ const App: React.FC = () => {
         </section>
 
         <Suspense fallback={<LoadingSection />}>
-          <Testimonials />
           <Locations />
+          <Testimonials />
           <Stats />
           <div id="como-podemos-ajudar"><Features /></div>
           <StructureGallery />
