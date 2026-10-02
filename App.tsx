@@ -1,7 +1,6 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import { MessageCircle, ShieldCheck } from 'lucide-react';
 import { Hero } from './components/Hero';
-import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { Blog } from './components/Blog';
 import { LocationBanner } from './components/LocationBanner';
 import { WHATSAPP_URL } from './constants';
@@ -30,24 +29,24 @@ const App: React.FC = () => {
 
   return (
     window.location.pathname.startsWith('/blog') ? <Blog /> : (
-    <div className="min-h-screen flex flex-col font-sans bg-slate-50 text-slate-800">
+    <div className="home-editorial min-h-screen flex flex-col font-sans">
       <LocationBanner />
 
-      <header className="absolute top-10 w-full z-50 bg-transparent">
+      <header className="home-header sticky top-0 w-full z-50 border-b border-emerald-950/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <a href="#hero" className="flex items-center gap-2 font-bold text-2xl text-white drop-shadow-md tracking-tight" aria-label="Núcleo Equilíbrio - início">
+          <a href="#hero" className="home-brand flex items-center gap-2 font-bold text-xl text-emerald-950 tracking-tight" aria-label="Núcleo Equilíbrio - início">
             <img src="/assets/images/logo-nucleo-equilibrio.webp" alt="" className="w-10 h-10 object-contain" />
-            <span>Núcleo<span className="text-teal-300">Equilíbrio</span></span>
+            <span>Núcleo <span className="text-emerald-700">Equilíbrio</span></span>
           </a>
           <nav className="hidden md:flex items-center gap-7" aria-label="Navegação principal">
-            <a href="#como-podemos-ajudar" className="text-slate-200 hover:text-white font-medium transition-colors">Como podemos ajudar</a>
-            <a href="#unidades" className="text-slate-200 hover:text-white font-medium transition-colors">Unidades</a>
-            <a href="#convenios" className="text-slate-200 hover:text-white font-medium transition-colors">Convênios</a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors font-medium text-sm shadow-lg inline-flex items-center gap-2">
+            <a href="#como-podemos-ajudar" className="home-nav-link font-medium transition-colors">Como podemos ajudar</a>
+            <a href="#unidades" className="home-nav-link font-medium transition-colors">Unidades</a>
+            <a href="#convenios" className="home-nav-link font-medium transition-colors">Convênios</a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="home-nav-cta transition-colors font-medium text-sm inline-flex items-center gap-2">
               <MessageCircle size={17} /> Falar no WhatsApp
             </a>
           </nav>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="md:hidden inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-teal-600 text-white text-sm font-semibold shadow-lg">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="home-nav-cta md:hidden inline-flex items-center gap-2 text-sm font-semibold">
             <MessageCircle size={17} /> WhatsApp
           </a>
         </div>
@@ -56,7 +55,7 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Hero />
 
-        <section className="bg-white border-b border-slate-100" aria-label="Resumo do atendimento">
+        <section className="home-trust-strip border-b border-slate-100" aria-label="Resumo do atendimento">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start gap-3"><ShieldCheck className="text-teal-600" size={22} /><span className="text-sm font-semibold text-slate-700">Atendimento reservado</span></div>
             <div className="flex items-center justify-center sm:justify-start gap-3"><ShieldCheck className="text-teal-600" size={22} /><span className="text-sm font-semibold text-slate-700">Orientação individualizada</span></div>
@@ -75,7 +74,6 @@ const App: React.FC = () => {
       </main>
 
       <Suspense fallback={null}><Footer /></Suspense>
-      <FloatingWhatsApp />
     </div>
     )
   );

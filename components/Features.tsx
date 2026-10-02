@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 export const Features: React.FC = () => {
   return (
-    <div className="py-16 bg-white overflow-hidden lg:py-24">
+    <div className="home-support py-16 bg-white overflow-hidden lg:py-24">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Seção Introdutória - Cuidar de Quem Você Ama */}

@@ -6,7 +6,7 @@ import { InsuranceLogos } from './InsuranceLogos';
 
 export const Insurance: React.FC = () => {
   return (
-    <div id="convenios" className="bg-teal-900 text-white py-16">
+    <div id="convenios" className="home-insurance bg-teal-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Bloco de Texto e CTA */}

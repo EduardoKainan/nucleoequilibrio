@@ -4,7 +4,7 @@ import { MessageSquareQuote } from 'lucide-react';
 
 export const Testimonials: React.FC = () => {
   return (
-    <div id="depoimentos" className="py-16 bg-slate-50 relative overflow-hidden">
+    <div id="depoimentos" className="home-testimonials py-16 bg-slate-50 relative overflow-hidden">
       {/* Elemento decorativo de fundo */}
       <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
          <div className="absolute top-10 left-10 w-64 h-64 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>

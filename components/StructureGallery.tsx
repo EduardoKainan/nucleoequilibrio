@@ -3,7 +3,7 @@ import { ImageCarousel } from './ImageCarousel';
 
 export const StructureGallery: React.FC = () => {
   return (
-    <div className="bg-slate-50 py-16 sm:py-24 border-t border-slate-200">
+    <div className="home-structure bg-slate-50 py-16 sm:py-24 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">
