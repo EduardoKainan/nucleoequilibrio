@@ -12,18 +12,18 @@ type BannerState = 'loading' | 'localized' | 'fallback' | 'hidden';
 const STORAGE_KEY = 'nucleo-equilibrio-location-banner-dismissed';
 
 export const LocationBanner: React.FC = () => {
-  const [state, setState] = useState<BannerState>(() => {
-    try {
-      return sessionStorage.getItem(STORAGE_KEY) === '1' ? 'hidden' : 'loading';
-    } catch {
-      return 'loading';
-    }
-  });
+  const [state, setState] = useState<BannerState>('loading');
   const [location, setLocation] = useState<LocationData | null>(null);
 
   useEffect(() => {
-    if (state === 'hidden') return;
-
+    try {
+      if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+        setState('hidden');
+        return;
+      }
+    } catch {
+      // Storage indisponível; mantém o aviso padrão.
+    }
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 3500);
 
@@ -47,7 +47,7 @@ export const LocationBanner: React.FC = () => {
       window.clearTimeout(timeout);
       controller.abort();
     };
-  }, [state]);
+  }, []);
 
   const dismiss = () => {
     try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch { /* sessão sem storage */ }

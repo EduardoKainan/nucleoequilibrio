@@ -1,12 +1,13 @@
 {
+  "trailingSlash": false,
   "rewrites": [
     {
       "source": "/blog",
-      "destination": "/index.html"
+      "destination": "/blog.html"
     },
     {
-      "source": "/blog/(.*)",
-      "destination": "/index.html"
+      "source": "/blog/:slug",
+      "destination": "/blog/:slug.html"
     },
     {
       "source": "/apoio-emocional-especializado",

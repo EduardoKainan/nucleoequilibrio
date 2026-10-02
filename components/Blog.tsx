@@ -15,6 +15,26 @@ const setMeta = (name: string, content: string) => {
   tag.content = content;
 };
 
+const setProperty = (property: string, content: string) => {
+  let tag = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
+  if (!tag) {
+    tag = document.createElement('meta');
+    tag.setAttribute('property', property);
+    document.head.appendChild(tag);
+  }
+  tag.content = content;
+};
+
+const setCanonical = (href: string) => {
+  let tag = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!tag) {
+    tag = document.createElement('link');
+    tag.rel = 'canonical';
+    document.head.appendChild(tag);
+  }
+  tag.href = href;
+};
+
 const BlogHeader: React.FC = () => (
   <header className="bg-slate-950 text-white">
     <div className="max-w-6xl mx-auto px-5 py-5 flex items-center justify-between gap-4">
@@ -32,7 +52,13 @@ const BlogHeader: React.FC = () => (
 const BlogIndex: React.FC = () => {
   useEffect(() => {
     document.title = 'Blog | Núcleo Equilíbrio';
-    setMeta('description', 'Orientações para famílias sobre cuidado, tratamento e próximos passos, com responsabilidade e acolhimento.');
+    const description = 'Orientações para famílias sobre cuidado, tratamento e próximos passos, com responsabilidade e acolhimento.';
+    setMeta('description', description);
+    setCanonical(`${window.location.origin}/blog`);
+    setProperty('og:title', document.title);
+    setProperty('og:description', description);
+    setProperty('og:url', `${window.location.origin}/blog`);
+    setProperty('og:type', 'website');
   }, []);
 
   return (
@@ -72,6 +98,13 @@ const BlogArticle: React.FC<{ post: BlogPost }> = ({ post }) => {
   useEffect(() => {
     document.title = `${post.title} | Núcleo Equilíbrio`;
     setMeta('description', post.excerpt);
+    const canonical = `${window.location.origin}/blog/${post.slug}`;
+    setCanonical(canonical);
+    setProperty('og:title', document.title);
+    setProperty('og:description', post.excerpt);
+    setProperty('og:url', canonical);
+    setProperty('og:type', 'article');
+    setProperty('og:image', `${window.location.origin}${post.image}`);
   }, [post]);
 
   return (

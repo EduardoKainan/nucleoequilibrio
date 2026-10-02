@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Allow ChatGPT search discovery, but do not permit GPTBot training crawls by default.
+User-agent: GPTBot
+Disallow: /
+
+Sitemap: https://www.nucleoequilibrio.com.br/sitemap.xml

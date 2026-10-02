@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "optimize-images": "node scripts/optimize-images.js",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && node scripts/prerender-seo.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
