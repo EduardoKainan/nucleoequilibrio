@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, Shield } from 'lucide-react';
-import { PHONE_DISPLAY, PHONE_NUMBER } from '../constants';
+import { MessageCircle, Phone, Shield } from 'lucide-react';
+import { PHONE_DISPLAY, PHONE_NUMBER, WHATSAPP_DISPLAY, WHATSAPP_URL } from '../constants';
 
 export const Footer: React.FC = () => {
   return (
@@ -12,13 +12,24 @@ export const Footer: React.FC = () => {
           <p className="text-sm max-w-xs">
             Acolhimento, orientação e acompanhamento responsável para pessoas e famílias em Goiás, no Distrito Federal, em Minas Gerais e região.
           </p>
-          <a
-            href={`tel:${PHONE_NUMBER}`}
-            className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors"
-          >
-            <Phone size={16} />
-            {PHONE_DISPLAY}
-          </a>
+          <div className="mt-3 flex flex-col items-center gap-2 text-sm font-semibold md:items-start">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-teal-400 transition-colors hover:text-teal-300"
+            >
+              <MessageCircle size={16} aria-hidden="true" />
+              WhatsApp: {WHATSAPP_DISPLAY}
+            </a>
+            <a
+              href={`tel:${PHONE_NUMBER}`}
+              className="inline-flex items-center gap-2 text-teal-400 transition-colors hover:text-teal-300"
+            >
+              <Phone size={16} aria-hidden="true" />
+              Telefone: {PHONE_DISPLAY}
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-col items-center md:items-end">

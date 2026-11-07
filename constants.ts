@@ -1,8 +1,10 @@
 import { Brain, Heart, Activity, Ban, Baby, FileCheck, Ambulance } from 'lucide-react';
 
-export const WHATSAPP_URL = "https://wa.me/message/I356RT7T5OLQG1";
-export const PHONE_NUMBER = "553897397138";
-export const PHONE_DISPLAY = "+55 38 9739-7138";
+export const WHATSAPP_NUMBER = "5538997397138";
+export const WHATSAPP_DISPLAY = "38 997397138";
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+export const PHONE_NUMBER = "553498833906";
+export const PHONE_DISPLAY = "34 9883-3906";
 
 export const NAV_LINKS = [
   { label: 'Início', href: '#hero' },
